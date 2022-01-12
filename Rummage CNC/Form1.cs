@@ -249,7 +249,7 @@ namespace Rummage_CNC
                 }
 
                 Smartcontrol s1 = new Smartcontrol();
-                s1.loop(sender, e);
+                s1.smartloop(sender, e);
 
             });
         }
@@ -257,14 +257,8 @@ namespace Rummage_CNC
         {
             Smartcontrol s1 = new Smartcontrol();
             s1.looporder(sender, e);
-        }
-        //------------- emergency stop ------------------------
-        private void EStop_Click(object sender, EventArgs e)
-        {
-            EStopWasClicked = true;
-            DiagnosticsRTB.Text += "Emergency STOP" + Environment.NewLine;
-            ButtonEnabled();
-        }
+        }       
+        
         //-------------- save settings--------------------------
         private void SaveSettings_Click(object sender, EventArgs e)
         {
@@ -274,6 +268,7 @@ namespace Rummage_CNC
         //--------------- Threading ----------------------------
         private void button25_Click(object sender, EventArgs e)
         {
+            ButtonDisabled();
             startthreadingnow = 1;
         }
         private void button32_Click(object sender, EventArgs e)
@@ -314,13 +309,61 @@ namespace Rummage_CNC
             }
         }
 
-        private void RunRGcode_Click(object sender, EventArgs e) //run rgcode
+        public void running()
         {
             Task.Factory.StartNew(() =>
             {
-                RGcode s1 = new RGcode();
-                s1.Readcode();
+                int count = 0;
+
+                for (int i = 0; i < 2; i++)
+                {
+                    CodeRunning.Text = "Code Running";
+                    Task.Delay(100).Wait();
+                    CodeRunning.Text = "";
+                    Task.Delay(100).Wait();
+                    
+                    count = RGcodeRTB.Text.Length;
+                    if (count > 2)
+                    {
+                       i = 0;
+                    }                    
+                }
             });
+
+        }   
+
+        public int currentcycl = 1;
+        public void RunRGcode_Click(object sender, EventArgs e) //run rgcode
+        {
+
+            Task.Factory.StartNew(() =>
+                {
+                    running();
+
+                    int cycl = Convert.ToInt32(CycleCount.Text);
+                    CurrentCycle.Text = Convert.ToString(currentcycl);
+
+                    if (Form1.self.ReloadcodeCB.Checked == true)
+                    {
+                        Form1.self.RepeatBox.Text = Form1.self.RGcodeRTB.Text;
+                    }
+
+                    Form1.self.ButtonDisabled();
+                    RGcode s1 = new RGcode();
+                    s1.Readcode();
+                    Form1.self.ButtonEnabled();
+
+                    if (Form1.self.ReloadcodeCB.Checked == true && currentcycl <= cycl - 1)
+                    {
+                        currentcycl++;
+                        Form1.self.RGcodeRTB.Text = Form1.self.RepeatBox.Text;
+                        RunRGcode_Click(sender, e);
+                    }
+                    else
+                    {
+                        currentcycl = 1;
+                    }
+                });
         }
         private void ExportCode_Click(object sender, EventArgs e)//export RGcode
         {
@@ -359,15 +402,33 @@ namespace Rummage_CNC
         //----------------- Clear E STop -----------------------
         private void ClearEstop_Click(object sender, EventArgs e)
         {
-            RGcodeRTB.Text = "";
+            if (ReloadcodeCB.Checked == false)
+            {
+                RGcodeRTB.Text = "";
 
-            Form1.self.serialPort1.Write("0\r");
-            Form1.self.serialPort1.Write("ccwy\r");
-            Form1.self.serialPort1.Write("0\r");
-            Form1.self.serialPort1.Write("RGE-Stop\r");
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("ccwy\r");
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("RGE-Stop\r");
 
-            Form1.self.buttonEnabled.Text = "0";
-            ButtonEnabled();
+                Form1.self.buttonEnabled.Text = "0";
+                ButtonEnabled();
+            }
+
+            if (ReloadcodeCB.Checked == true)
+            {
+                ReloadcodeCB.Checked = false;
+                RGcodeRTB.Text = "";
+
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("ccwy\r");
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("RGE-Stop\r");
+
+                Form1.self.buttonEnabled.Text = "0";
+                ButtonEnabled();                
+            }
+            
         }
         //------------------ Tapers ----------------------------
         private void CycleTaper_Click(object sender, EventArgs e) // cycle taper
@@ -423,10 +484,11 @@ namespace Rummage_CNC
         {
             await Task.Run(() =>
             {
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("ccwy\r");
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("Manual Off\r");
+               Task.Delay(10).Wait();
+               Form1.self.serialPort1.Write("0\r");
+               Form1.self.serialPort1.Write("ccwy\r");
+               Form1.self.serialPort1.Write("0\r");
+               Form1.self.serialPort1.Write("Manual Off\r");                
             });
         }
         //--------------- Cycle Radius  --------------------------
@@ -502,7 +564,10 @@ namespace Rummage_CNC
             string DrillAx = DrillAxis.Text;
             double nextDrill = peckdepth;
 
-            Form1.self.RGcodeRTB.Text = "";
+            if (Form1.self.ExportsClearCB.Checked == true)
+            {
+                Form1.self.RGcodeRTB.Text = "";
+            }
 
             for (double i = 0; i < totalDrill; i = (i + peckdepth))
             {
@@ -526,6 +591,16 @@ namespace Rummage_CNC
         public void ButtonEnabled()
         {
             Cycle4.Enabled = true;
+            //----
+            XnegMove.Enabled = true;
+            XposMove.Enabled = true;
+            YnegMove.Enabled = true;
+            YposMove.Enabled = true;
+            ZnegMove.Enabled = true;
+            ZposMove.Enabled = true;
+            AnegMove.Enabled = true;
+            AposMove.Enabled = true;
+            //----
             manualXn.Enabled = true;
             manualXp.Enabled = true;
             manualYn.Enabled = true;
@@ -534,10 +609,17 @@ namespace Rummage_CNC
             manualZp.Enabled = true;
             manualAn.Enabled = true;
             manualAp.Enabled = true;
+            //----
+            homeX.Enabled = true;
+            homeY.Enabled = true;
+            homeZ.Enabled = true;
+            homeA.Enabled = true;  
+            //----
             LimitX.Enabled = true;
             LimitY.Enabled = true;
             LimitZ.Enabled = true;
             LimitA.Enabled = true;
+            //----
             ToolSet.Enabled = true;
             RunRGcode.Enabled = true;
 
@@ -547,6 +629,16 @@ namespace Rummage_CNC
         public void ButtonDisabled()
         {
             Cycle4.Enabled = false;
+            //----
+            XnegMove.Enabled = false;
+            XposMove.Enabled = false;   
+            YnegMove.Enabled = false;
+            YposMove.Enabled = false;
+            ZnegMove.Enabled = false;
+            ZposMove.Enabled = false;
+            AnegMove.Enabled = false;
+            AposMove.Enabled = false;
+            //----
             manualXn.Enabled = false;
             manualXp.Enabled = false;
             manualYn.Enabled = false;
@@ -555,10 +647,17 @@ namespace Rummage_CNC
             manualZp.Enabled = false;
             manualAn.Enabled = false;
             manualAp.Enabled = false;
+            //----
+            homeX.Enabled=false;
+            homeY.Enabled=false;
+            homeZ.Enabled=false;
+            homeA.Enabled=false;
+            //----
             LimitX.Enabled = false;
             LimitY.Enabled = false;
             LimitZ.Enabled = false;
             LimitA.Enabled = false;
+            //--
             ToolSet.Enabled = false;
             RunRGcode.Enabled = false;
         }
@@ -728,7 +827,7 @@ namespace Rummage_CNC
 
             double MM = Convert.ToDouble(MetricConv.Text);
 
-            double newvalue = MM / 2.54;
+            double newvalue = MM / 25.4;
 
             InchConv.Text = string.Format("{0:0.0000}", newvalue);
         }

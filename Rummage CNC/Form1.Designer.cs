@@ -88,6 +88,10 @@ namespace Rummage_CNC
             this.DataBit = new System.Windows.Forms.Button();
             this.StopBit = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.RepeatBox = new System.Windows.Forms.RichTextBox();
+            this.ReloadcodeCB = new System.Windows.Forms.CheckBox();
+            this.checkBoxTaperReturn = new System.Windows.Forms.CheckBox();
+            this.ExportsClearCB = new System.Windows.Forms.CheckBox();
             this.IsRadius = new System.Windows.Forms.CheckBox();
             this.InchConv = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
@@ -228,7 +232,6 @@ namespace Rummage_CNC
             this.label19 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.ThreadType = new System.Windows.Forms.Button();
-            this.CycleEStop = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -252,6 +255,8 @@ namespace Rummage_CNC
             this.label2 = new System.Windows.Forms.Label();
             this.zeroY = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label67 = new System.Windows.Forms.Label();
+            this.CodeRunning = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -386,7 +391,7 @@ namespace Rummage_CNC
             this.ExportCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExportCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportCode.ForeColor = System.Drawing.Color.Black;
-            this.ExportCode.Location = new System.Drawing.Point(1288, 528);
+            this.ExportCode.Location = new System.Drawing.Point(1288, 581);
             this.ExportCode.Name = "ExportCode";
             this.ExportCode.Size = new System.Drawing.Size(121, 31);
             this.ExportCode.TabIndex = 154;
@@ -983,6 +988,12 @@ namespace Rummage_CNC
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.CodeRunning);
+            this.tabPage1.Controls.Add(this.label67);
+            this.tabPage1.Controls.Add(this.RepeatBox);
+            this.tabPage1.Controls.Add(this.ReloadcodeCB);
+            this.tabPage1.Controls.Add(this.checkBoxTaperReturn);
+            this.tabPage1.Controls.Add(this.ExportsClearCB);
             this.tabPage1.Controls.Add(this.IsRadius);
             this.tabPage1.Controls.Add(this.InchConv);
             this.tabPage1.Controls.Add(this.label66);
@@ -1128,7 +1139,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.ThreadType);
-            this.tabPage1.Controls.Add(this.CycleEStop);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.YposOrder);
             this.tabPage1.Controls.Add(this.YnegOrder);
@@ -1162,6 +1172,57 @@ namespace Rummage_CNC
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "DRO";
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
+            // 
+            // RepeatBox
+            // 
+            this.RepeatBox.Location = new System.Drawing.Point(1296, 855);
+            this.RepeatBox.Name = "RepeatBox";
+            this.RepeatBox.Size = new System.Drawing.Size(100, 96);
+            this.RepeatBox.TabIndex = 159;
+            this.RepeatBox.Text = "";
+            this.RepeatBox.Visible = false;
+            // 
+            // ReloadcodeCB
+            // 
+            this.ReloadcodeCB.AutoSize = true;
+            this.ReloadcodeCB.Checked = true;
+            this.ReloadcodeCB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ReloadcodeCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReloadcodeCB.ForeColor = System.Drawing.Color.Lime;
+            this.ReloadcodeCB.Location = new System.Drawing.Point(1290, 702);
+            this.ReloadcodeCB.Name = "ReloadcodeCB";
+            this.ReloadcodeCB.Size = new System.Drawing.Size(106, 20);
+            this.ReloadcodeCB.TabIndex = 158;
+            this.ReloadcodeCB.Text = "Cycle Code";
+            this.ReloadcodeCB.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTaperReturn
+            // 
+            this.checkBoxTaperReturn.AutoSize = true;
+            this.checkBoxTaperReturn.Checked = true;
+            this.checkBoxTaperReturn.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxTaperReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTaperReturn.ForeColor = System.Drawing.Color.Lime;
+            this.checkBoxTaperReturn.Location = new System.Drawing.Point(791, 760);
+            this.checkBoxTaperReturn.Name = "checkBoxTaperReturn";
+            this.checkBoxTaperReturn.Size = new System.Drawing.Size(105, 20);
+            this.checkBoxTaperReturn.TabIndex = 157;
+            this.checkBoxTaperReturn.Text = "Taper Return";
+            this.checkBoxTaperReturn.UseVisualStyleBackColor = true;
+            // 
+            // ExportsClearCB
+            // 
+            this.ExportsClearCB.AutoSize = true;
+            this.ExportsClearCB.Checked = true;
+            this.ExportsClearCB.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ExportsClearCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportsClearCB.ForeColor = System.Drawing.Color.Lime;
+            this.ExportsClearCB.Location = new System.Drawing.Point(1290, 645);
+            this.ExportsClearCB.Name = "ExportsClearCB";
+            this.ExportsClearCB.Size = new System.Drawing.Size(119, 20);
+            this.ExportsClearCB.TabIndex = 156;
+            this.ExportsClearCB.Text = "Exports Clear";
+            this.ExportsClearCB.UseVisualStyleBackColor = true;
             // 
             // IsRadius
             // 
@@ -1448,7 +1509,7 @@ namespace Rummage_CNC
             this.GoThread.AutoSize = true;
             this.GoThread.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoThread.ForeColor = System.Drawing.Color.Lime;
-            this.GoThread.Location = new System.Drawing.Point(89, 910);
+            this.GoThread.Location = new System.Drawing.Point(80, 926);
             this.GoThread.Name = "GoThread";
             this.GoThread.Size = new System.Drawing.Size(177, 25);
             this.GoThread.TabIndex = 0;
@@ -2326,7 +2387,7 @@ namespace Rummage_CNC
             this.RPM.BackColor = System.Drawing.Color.White;
             this.RPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPM.ForeColor = System.Drawing.Color.Red;
-            this.RPM.Location = new System.Drawing.Point(14, 776);
+            this.RPM.Location = new System.Drawing.Point(14, 796);
             this.RPM.MaxLength = 8;
             this.RPM.Name = "RPM";
             this.RPM.ReadOnly = true;
@@ -2341,7 +2402,7 @@ namespace Rummage_CNC
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.Lime;
-            this.label38.Location = new System.Drawing.Point(127, 740);
+            this.label38.Location = new System.Drawing.Point(127, 760);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 33);
             this.label38.TabIndex = 0;
@@ -2465,7 +2526,7 @@ namespace Rummage_CNC
             this.saveGcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveGcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveGcode.ForeColor = System.Drawing.Color.Cyan;
-            this.saveGcode.Location = new System.Drawing.Point(1288, 492);
+            this.saveGcode.Location = new System.Drawing.Point(1288, 545);
             this.saveGcode.Name = "saveGcode";
             this.saveGcode.Size = new System.Drawing.Size(121, 30);
             this.saveGcode.TabIndex = 153;
@@ -2799,9 +2860,9 @@ namespace Rummage_CNC
             // 
             this.CurrentCycle.BackColor = System.Drawing.Color.White;
             this.CurrentCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentCycle.Location = new System.Drawing.Point(14, 646);
+            this.CurrentCycle.Location = new System.Drawing.Point(1288, 809);
             this.CurrentCycle.Name = "CurrentCycle";
-            this.CurrentCycle.Size = new System.Drawing.Size(102, 31);
+            this.CurrentCycle.Size = new System.Drawing.Size(121, 31);
             this.CurrentCycle.TabIndex = 0;
             this.CurrentCycle.Text = "0";
             this.CurrentCycle.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2835,9 +2896,9 @@ namespace Rummage_CNC
             // 
             this.CycleCount.BackColor = System.Drawing.Color.White;
             this.CycleCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CycleCount.Location = new System.Drawing.Point(14, 609);
+            this.CycleCount.Location = new System.Drawing.Point(1288, 755);
             this.CycleCount.Name = "CycleCount";
-            this.CycleCount.Size = new System.Drawing.Size(102, 31);
+            this.CycleCount.Size = new System.Drawing.Size(121, 31);
             this.CycleCount.TabIndex = 58;
             this.CycleCount.Text = "1";
             this.CycleCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2961,7 +3022,7 @@ namespace Rummage_CNC
             this.RGCodeEStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RGCodeEStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RGCodeEStop.ForeColor = System.Drawing.Color.Red;
-            this.RGCodeEStop.Location = new System.Drawing.Point(1288, 399);
+            this.RGCodeEStop.Location = new System.Drawing.Point(1288, 434);
             this.RGCodeEStop.Name = "RGCodeEStop";
             this.RGCodeEStop.Size = new System.Drawing.Size(121, 68);
             this.RGCodeEStop.TabIndex = 152;
@@ -2976,7 +3037,7 @@ namespace Rummage_CNC
             this.RunRGcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RunRGcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RunRGcode.ForeColor = System.Drawing.Color.Black;
-            this.RunRGcode.Location = new System.Drawing.Point(1288, 344);
+            this.RunRGcode.Location = new System.Drawing.Point(1288, 348);
             this.RunRGcode.Name = "RunRGcode";
             this.RunRGcode.Size = new System.Drawing.Size(121, 31);
             this.RunRGcode.TabIndex = 151;
@@ -3051,33 +3112,17 @@ namespace Rummage_CNC
             this.ThreadType.UseVisualStyleBackColor = false;
             this.ThreadType.Click += new System.EventHandler(this.button32_Click);
             // 
-            // CycleEStop
-            // 
-            this.CycleEStop.BackColor = System.Drawing.Color.Black;
-            this.CycleEStop.FlatAppearance.BorderSize = 0;
-            this.CycleEStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.CycleEStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CycleEStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CycleEStop.ForeColor = System.Drawing.Color.Red;
-            this.CycleEStop.Location = new System.Drawing.Point(195, 609);
-            this.CycleEStop.Name = "CycleEStop";
-            this.CycleEStop.Size = new System.Drawing.Size(132, 68);
-            this.CycleEStop.TabIndex = 60;
-            this.CycleEStop.Text = "STOP";
-            this.CycleEStop.UseVisualStyleBackColor = false;
-            this.CycleEStop.Click += new System.EventHandler(this.EStop_Click);
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Lime;
-            this.label20.Location = new System.Drawing.Point(130, 649);
+            this.label20.Location = new System.Drawing.Point(1306, 791);
             this.label20.Name = "label20";
             this.label20.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label20.Size = new System.Drawing.Size(52, 26);
+            this.label20.Size = new System.Drawing.Size(85, 13);
             this.label20.TabIndex = 0;
-            this.label20.Text = "Current \r\n Count";
+            this.label20.Text = "Current Count";
             // 
             // label23
             // 
@@ -3127,9 +3172,9 @@ namespace Rummage_CNC
             this.Cycle4.ForeColor = System.Drawing.Color.Black;
             this.Cycle4.Location = new System.Drawing.Point(122, 609);
             this.Cycle4.Name = "Cycle4";
-            this.Cycle4.Size = new System.Drawing.Size(67, 31);
+            this.Cycle4.Size = new System.Drawing.Size(163, 31);
             this.Cycle4.TabIndex = 59;
-            this.Cycle4.Text = "Cycle";
+            this.Cycle4.Text = "Export";
             this.Cycle4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.Cycle4.UseVisualStyleBackColor = false;
             this.Cycle4.Click += new System.EventHandler(this.button24_Click);
@@ -3375,7 +3420,7 @@ namespace Rummage_CNC
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -3385,6 +3430,28 @@ namespace Rummage_CNC
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1905, 1000);
             this.tabControl1.TabIndex = 0;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.Lime;
+            this.label67.Location = new System.Drawing.Point(1314, 736);
+            this.label67.Name = "label67";
+            this.label67.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label67.Size = new System.Drawing.Size(71, 13);
+            this.label67.TabIndex = 160;
+            this.label67.Text = "Run Cycles";
+            // 
+            // CodeRunning
+            // 
+            this.CodeRunning.AutoSize = true;
+            this.CodeRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeRunning.ForeColor = System.Drawing.Color.Red;
+            this.CodeRunning.Location = new System.Drawing.Point(1416, 13);
+            this.CodeRunning.Name = "CodeRunning";
+            this.CodeRunning.Size = new System.Drawing.Size(0, 25);
+            this.CodeRunning.TabIndex = 161;
             // 
             // Form1
             // 
@@ -3467,7 +3534,6 @@ namespace Rummage_CNC
         public System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label26;
         public System.Windows.Forms.Button ThreadType;
-        public System.Windows.Forms.Button CycleEStop;
         private System.Windows.Forms.Label label20;
         public System.Windows.Forms.Button YposOrder;
         public System.Windows.Forms.Button YnegOrder;
@@ -3631,6 +3697,12 @@ namespace Rummage_CNC
         private System.Windows.Forms.Label label24;
         public System.Windows.Forms.TextBox ReturnToStockDiam;
         private System.Windows.Forms.CheckBox IsRadius;
+        public System.Windows.Forms.CheckBox ExportsClearCB;
+        public System.Windows.Forms.CheckBox checkBoxTaperReturn;
+        public System.Windows.Forms.CheckBox ReloadcodeCB;
+        public System.Windows.Forms.RichTextBox RepeatBox;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label CodeRunning;
     }
 }
 

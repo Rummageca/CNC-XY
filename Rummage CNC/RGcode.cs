@@ -121,13 +121,11 @@ namespace Rummage_CNC
                 {
                     Task.Delay(10).Wait();
                 }
-
                 removeAllBlock();
-
             }
-            else if (notclear == "" || notclear.StartsWith("N"))
+            else if (notclear == "")
             {
-                Form1.self.RGcodeRTB.Text = "No code!";
+                Form1.self.RGcodeRTB.Text = "";
             }
         }
 
@@ -159,7 +157,7 @@ namespace Rummage_CNC
         //-----------------------------------------read GCODE------------------------------------------------------------------------
         public void Readcode()
         {
-
+            
             string[] lines = Form1.self.RGcodeRTB.Lines;
             string notclear = Form1.self.RGcodeRTB.Text;
 
@@ -169,7 +167,7 @@ namespace Rummage_CNC
                 {
                     dualmotors();
                 }
-                //-------------------------------rotation and axis-----------------------------------------------------------------------
+                //-------------------------------rotation and axis------------------------------------------------------------------
                 if (!lines[1].Contains("T"))
                 {
                     string rotate = "";
@@ -195,7 +193,7 @@ namespace Rummage_CNC
                         rotate = "cw";
                     }
 
-                    //--------------------------------------------------axis----------------------------------------------------------------
+                    //--------------------------------------------------axis-------------------------------------------------------
                     if (axe.EndsWith("x"))
                     {
                         axis = "x";
@@ -240,14 +238,11 @@ namespace Rummage_CNC
 
                     removeblock();
                 }
-                else if (notclear == "" || notclear.StartsWith("N"))
-                {
-                    Form1.self.RGcodeRTB.Text = "No code!";
-                }
+                
             }
-            else if (notclear == "" || notclear.StartsWith("N"))
+            else if (notclear == "")
             {
-                Form1.self.RGcodeRTB.Text = "No code!";
+                Form1.self.RGcodeRTB.Text = "";
             }
 
         }

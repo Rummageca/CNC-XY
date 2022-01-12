@@ -37,8 +37,10 @@ namespace Rummage_CNC
             double checkmove = 0;
             //  double Xconst = radius * Math.Sin(fromradians);
 
-            Form1.self.RGcodeRTB.Text = "";
-
+            if (Form1.self.ExportsClearCB.Checked == true)
+            {
+                Form1.self.RGcodeRTB.Text = "";
+            }
             //-------------------------------------------------Outside corner-------------------------------------------------------------
 
             // needs testing

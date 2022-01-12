@@ -62,8 +62,7 @@ namespace Rummage_CNC
             double conv = (toNum * puls) * stepconverstion;
             double oldvalue = Convert.ToDouble(Form1.self.inchx.Text);
             double finished = oldvalue + conv;
-            Form1.self.inchx.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
-            Form1.self.buttonEnabled.Text = "1";
+            Form1.self.inchx.Text = Convert.ToString(String.Format("{0:0.0000}", finished));           
         }
         private void YReceived()
         {
@@ -75,8 +74,6 @@ namespace Rummage_CNC
             double oldvalue = Convert.ToDouble(Form1.self.inchy.Text);
             double finished = oldvalue + conv;
             Form1.self.inchy.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
-            Form1.self.buttonEnabled.Text = "1";
-
         }
         private void ZReceived()
         {
@@ -87,8 +84,7 @@ namespace Rummage_CNC
             double conv = (toNum * puls) * stepconverstion;
             double oldvalue = Convert.ToDouble(Form1.self.inchz.Text);
             double finished = oldvalue + conv;
-            Form1.self.inchz.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
-            Form1.self.buttonEnabled.Text = "1";
+            Form1.self.inchz.Text = Convert.ToString(String.Format("{0:0.0000}", finished));            
         }
         private void ZeroZ()
         {
@@ -104,8 +100,6 @@ namespace Rummage_CNC
             double oldvalue = Convert.ToDouble(Form1.self.incha.Text);
             double finished = oldvalue + conv;
             Form1.self.incha.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
-            Form1.self.buttonEnabled.Text = "1";
-
         }
         private void THDReceived()
         {
@@ -125,7 +119,6 @@ namespace Rummage_CNC
                 Form1.self.GoThread.Text = "Waiting For TDC!";
                 Form1.self.threadcount = 0;
             }
-
 
         }
 
