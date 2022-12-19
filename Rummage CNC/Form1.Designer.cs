@@ -1907,6 +1907,7 @@ namespace Rummage_CNC
             this.ReturnToStockDiam.TabIndex = 94;
             this.ReturnToStockDiam.Text = "2.00";
             this.ReturnToStockDiam.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ReturnToStockDiam.TextChanged += new System.EventHandler(this.ReturnToStockDiam_TextChanged);
             this.ReturnToStockDiam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // CancelLimit

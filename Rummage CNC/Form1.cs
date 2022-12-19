@@ -1073,6 +1073,11 @@ namespace Rummage_CNC
             }
             
         }
+
+        private void ReturnToStockDiam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
