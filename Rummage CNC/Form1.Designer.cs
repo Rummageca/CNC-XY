@@ -40,11 +40,25 @@ namespace Rummage_CNC
             this.YnegOrder = new System.Windows.Forms.Button();
             this.YposOrder = new System.Windows.Forms.Button();
             this.SaveSettings = new System.Windows.Forms.Button();
-            this.ExportCode = new System.Windows.Forms.Button();
             this.AposOrder = new System.Windows.Forms.Button();
             this.AnegOrder = new System.Windows.Forms.Button();
             this.ZposOrder = new System.Windows.Forms.Button();
             this.ZnegOrder = new System.Windows.Forms.Button();
+            this.label69 = new System.Windows.Forms.Label();
+            this.TaperPullBack = new System.Windows.Forms.TextBox();
+            this.DegreeInc = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.IsRadius = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label60 = new System.Windows.Forms.Label();
@@ -88,11 +102,38 @@ namespace Rummage_CNC
             this.DataBit = new System.Windows.Forms.Button();
             this.StopBit = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ToolDir = new System.Windows.Forms.Button();
+            this.ToolSetAxis1 = new System.Windows.Forms.Button();
+            this.ShortFeedAxisBT = new System.Windows.Forms.Button();
+            this.LongFeedAxisBT = new System.Windows.Forms.Button();
+            this.ThreadRetractAxisBT = new System.Windows.Forms.Button();
+            this.ThreadAxisBT = new System.Windows.Forms.Button();
+            this.TaperIsRadius = new System.Windows.Forms.CheckBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.ShortAxis = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ThreadDirection = new System.Windows.Forms.Button();
+            this.DOCRTB = new System.Windows.Forms.RichTextBox();
+            this.DOCTableCheck = new System.Windows.Forms.CheckBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.ThreadDepth = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.ThreadDOC = new System.Windows.Forms.TextBox();
+            this.ThreadRetractIPM = new System.Windows.Forms.Button();
+            this.label76 = new System.Windows.Forms.Label();
+            this.ThreadRetractLength = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.ThreadLength = new System.Windows.Forms.TextBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.RadiusIPMReturn = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.ReturnIPMTaper = new System.Windows.Forms.TextBox();
+            this.CodeRunning = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.RepeatBox = new System.Windows.Forms.RichTextBox();
             this.ReloadcodeCB = new System.Windows.Forms.CheckBox();
             this.checkBoxTaperReturn = new System.Windows.Forms.CheckBox();
             this.ExportsClearCB = new System.Windows.Forms.CheckBox();
-            this.IsRadius = new System.Windows.Forms.CheckBox();
             this.InchConv = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
             this.MetricConv = new System.Windows.Forms.TextBox();
@@ -112,7 +153,6 @@ namespace Rummage_CNC
             this.label62 = new System.Windows.Forms.Label();
             this.MetricTPI = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
             this.GoThread = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.DrillAxis = new System.Windows.Forms.Button();
@@ -168,10 +208,6 @@ namespace Rummage_CNC
             this.label44 = new System.Windows.Forms.Label();
             this.drillDepth = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label43 = new System.Windows.Forms.Label();
             this.DegreeIPM = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -184,7 +220,6 @@ namespace Rummage_CNC
             this.label36 = new System.Windows.Forms.Label();
             this.CycleRadius = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
-            this.DegreeInc = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.CircleRadius = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -197,8 +232,6 @@ namespace Rummage_CNC
             this.label33 = new System.Windows.Forms.Label();
             this.homeY = new System.Windows.Forms.Button();
             this.homeX = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.ToRemove = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.Slope = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
@@ -215,7 +248,6 @@ namespace Rummage_CNC
             this.RGcodeRTB = new System.Windows.Forms.RichTextBox();
             this.CurrentCycle = new System.Windows.Forms.TextBox();
             this.ThreadRPM = new System.Windows.Forms.TextBox();
-            this.ThreadPI = new System.Windows.Forms.TextBox();
             this.CycleCount = new System.Windows.Forms.TextBox();
             this.YnegTB = new System.Windows.Forms.TextBox();
             this.YposTB = new System.Windows.Forms.TextBox();
@@ -234,7 +266,6 @@ namespace Rummage_CNC
             this.ThreadType = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.ThreadCycle = new System.Windows.Forms.Button();
             this.Cycle4 = new System.Windows.Forms.Button();
             this.YnegIPM = new System.Windows.Forms.Button();
@@ -255,8 +286,6 @@ namespace Rummage_CNC
             this.label2 = new System.Windows.Forms.Label();
             this.zeroY = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label67 = new System.Windows.Forms.Label();
-            this.CodeRunning = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -305,7 +334,7 @@ namespace Rummage_CNC
             this.XnegOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XnegOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XnegOrder.ForeColor = System.Drawing.Color.Black;
-            this.XnegOrder.Location = new System.Drawing.Point(291, 256);
+            this.XnegOrder.Location = new System.Drawing.Point(291, 250);
             this.XnegOrder.Name = "XnegOrder";
             this.XnegOrder.Size = new System.Drawing.Size(36, 31);
             this.XnegOrder.TabIndex = 29;
@@ -323,7 +352,7 @@ namespace Rummage_CNC
             this.XposOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XposOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XposOrder.ForeColor = System.Drawing.Color.Black;
-            this.XposOrder.Location = new System.Drawing.Point(291, 292);
+            this.XposOrder.Location = new System.Drawing.Point(291, 286);
             this.XposOrder.Name = "XposOrder";
             this.XposOrder.Size = new System.Drawing.Size(36, 31);
             this.XposOrder.TabIndex = 33;
@@ -341,11 +370,11 @@ namespace Rummage_CNC
             this.YnegOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YnegOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YnegOrder.ForeColor = System.Drawing.Color.Black;
-            this.YnegOrder.Location = new System.Drawing.Point(291, 345);
+            this.YnegOrder.Location = new System.Drawing.Point(291, 339);
             this.YnegOrder.Name = "YnegOrder";
             this.YnegOrder.Size = new System.Drawing.Size(36, 31);
             this.YnegOrder.TabIndex = 37;
-            this.YnegOrder.Text = "0";
+            this.YnegOrder.Text = "4";
             this.toolTip1.SetToolTip(this.YnegOrder, "Every sequnce button should have a unique number\r\n\r\nDO NOT have two 2\'s or three " +
         "1\'s this will most likely\r\ncause a software crash or worse!\r\n\r\n0 is skip.\r\n");
             this.YnegOrder.UseVisualStyleBackColor = false;
@@ -359,11 +388,11 @@ namespace Rummage_CNC
             this.YposOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YposOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YposOrder.ForeColor = System.Drawing.Color.Black;
-            this.YposOrder.Location = new System.Drawing.Point(291, 382);
+            this.YposOrder.Location = new System.Drawing.Point(291, 376);
             this.YposOrder.Name = "YposOrder";
             this.YposOrder.Size = new System.Drawing.Size(36, 31);
             this.YposOrder.TabIndex = 41;
-            this.YposOrder.Text = "0";
+            this.YposOrder.Text = "2";
             this.toolTip1.SetToolTip(this.YposOrder, "Every sequnce button should have a unique number\r\n\r\nDO NOT have two 2\'s or three " +
         "1\'s this will most likely\r\ncause a software crash or worse!\r\n\r\n0 is skip.\r\n");
             this.YposOrder.UseVisualStyleBackColor = false;
@@ -375,7 +404,7 @@ namespace Rummage_CNC
             this.SaveSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveSettings.ForeColor = System.Drawing.Color.Black;
-            this.SaveSettings.Location = new System.Drawing.Point(115, 820);
+            this.SaveSettings.Location = new System.Drawing.Point(115, 912);
             this.SaveSettings.Name = "SaveSettings";
             this.SaveSettings.Size = new System.Drawing.Size(133, 52);
             this.SaveSettings.TabIndex = 0;
@@ -383,22 +412,6 @@ namespace Rummage_CNC
             this.toolTip1.SetToolTip(this.SaveSettings, "Save file as \"Settings.cfg\" in the default directory for it to auto load");
             this.SaveSettings.UseVisualStyleBackColor = false;
             this.SaveSettings.Click += new System.EventHandler(this.SaveSettings_Click);
-            // 
-            // ExportCode
-            // 
-            this.ExportCode.BackColor = System.Drawing.Color.Yellow;
-            this.ExportCode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.ExportCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportCode.ForeColor = System.Drawing.Color.Black;
-            this.ExportCode.Location = new System.Drawing.Point(1288, 581);
-            this.ExportCode.Name = "ExportCode";
-            this.ExportCode.Size = new System.Drawing.Size(121, 31);
-            this.ExportCode.TabIndex = 154;
-            this.ExportCode.Text = "Export";
-            this.toolTip1.SetToolTip(this.ExportCode, "Export to Cycles");
-            this.ExportCode.UseVisualStyleBackColor = false;
-            this.ExportCode.Click += new System.EventHandler(this.ExportCode_Click);
             // 
             // AposOrder
             // 
@@ -408,7 +421,7 @@ namespace Rummage_CNC
             this.AposOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AposOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AposOrder.ForeColor = System.Drawing.Color.Black;
-            this.AposOrder.Location = new System.Drawing.Point(291, 560);
+            this.AposOrder.Location = new System.Drawing.Point(291, 554);
             this.AposOrder.Name = "AposOrder";
             this.AposOrder.Size = new System.Drawing.Size(36, 31);
             this.AposOrder.TabIndex = 57;
@@ -426,7 +439,7 @@ namespace Rummage_CNC
             this.AnegOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnegOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnegOrder.ForeColor = System.Drawing.Color.Black;
-            this.AnegOrder.Location = new System.Drawing.Point(291, 523);
+            this.AnegOrder.Location = new System.Drawing.Point(291, 517);
             this.AnegOrder.Name = "AnegOrder";
             this.AnegOrder.Size = new System.Drawing.Size(36, 31);
             this.AnegOrder.TabIndex = 53;
@@ -444,11 +457,11 @@ namespace Rummage_CNC
             this.ZposOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZposOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZposOrder.ForeColor = System.Drawing.Color.Black;
-            this.ZposOrder.Location = new System.Drawing.Point(291, 470);
+            this.ZposOrder.Location = new System.Drawing.Point(291, 464);
             this.ZposOrder.Name = "ZposOrder";
             this.ZposOrder.Size = new System.Drawing.Size(36, 31);
             this.ZposOrder.TabIndex = 49;
-            this.ZposOrder.Text = "2";
+            this.ZposOrder.Text = "0";
             this.toolTip1.SetToolTip(this.ZposOrder, "Every sequnce button should have a unique number\r\n\r\nDO NOT have two 2\'s or three " +
         "1\'s this will most likely\r\ncause a software crash or worse!\r\n\r\n0 is skip.\r\n");
             this.ZposOrder.UseVisualStyleBackColor = false;
@@ -462,15 +475,216 @@ namespace Rummage_CNC
             this.ZnegOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZnegOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZnegOrder.ForeColor = System.Drawing.Color.Black;
-            this.ZnegOrder.Location = new System.Drawing.Point(291, 434);
+            this.ZnegOrder.Location = new System.Drawing.Point(291, 428);
             this.ZnegOrder.Name = "ZnegOrder";
             this.ZnegOrder.Size = new System.Drawing.Size(36, 31);
             this.ZnegOrder.TabIndex = 45;
-            this.ZnegOrder.Text = "4";
+            this.ZnegOrder.Text = "0";
             this.toolTip1.SetToolTip(this.ZnegOrder, "Every sequnce button should have a unique number\r\n\r\nDO NOT have two 2\'s or three " +
         "1\'s this will most likely\r\ncause a software crash or worse!\r\n\r\n0 is skip.\r\n");
             this.ZnegOrder.UseVisualStyleBackColor = false;
             this.ZnegOrder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.loopsequ);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ForeColor = System.Drawing.Color.Lime;
+            this.label69.Location = new System.Drawing.Point(829, 788);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(108, 16);
+            this.label69.TabIndex = 164;
+            this.label69.Text = "Tool Pull Back";
+            this.toolTip1.SetToolTip(this.label69, "Move tool away extra, for clearance");
+            // 
+            // TaperPullBack
+            // 
+            this.TaperPullBack.BackColor = System.Drawing.Color.White;
+            this.TaperPullBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaperPullBack.Location = new System.Drawing.Point(831, 808);
+            this.TaperPullBack.MaxLength = 8;
+            this.TaperPullBack.Name = "TaperPullBack";
+            this.TaperPullBack.Size = new System.Drawing.Size(102, 31);
+            this.TaperPullBack.TabIndex = 165;
+            this.TaperPullBack.Text = "0.125";
+            this.TaperPullBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.TaperPullBack, "Move tool away extra, for clearance");
+            this.TaperPullBack.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
+            // 
+            // DegreeInc
+            // 
+            this.DegreeInc.BackColor = System.Drawing.Color.White;
+            this.DegreeInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DegreeInc.Location = new System.Drawing.Point(14, 750);
+            this.DegreeInc.MaxLength = 5;
+            this.DegreeInc.Name = "DegreeInc";
+            this.DegreeInc.Size = new System.Drawing.Size(102, 31);
+            this.DegreeInc.TabIndex = 66;
+            this.DegreeInc.Text = "1";
+            this.DegreeInc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.DegreeInc, "Degree of movment per pass... lower Numbers for finer cuts");
+            this.DegreeInc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.ForeColor = System.Drawing.Color.Lime;
+            this.label71.Location = new System.Drawing.Point(9, 945);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(76, 16);
+            this.label71.TabIndex = 168;
+            this.label71.Text = "Axis Short";
+            this.toolTip1.SetToolTip(this.label71, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.Lime;
+            this.label72.Location = new System.Drawing.Point(12, 914);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(74, 16);
+            this.label72.TabIndex = 170;
+            this.label72.Text = "Axis Long";
+            this.toolTip1.SetToolTip(this.label72, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label74.ForeColor = System.Drawing.Color.Lime;
+            this.label74.Location = new System.Drawing.Point(388, 841);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(90, 16);
+            this.label74.TabIndex = 175;
+            this.label74.Text = "Thread Axis";
+            this.toolTip1.SetToolTip(this.label74, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.ForeColor = System.Drawing.Color.Lime;
+            this.label75.Location = new System.Drawing.Point(388, 874);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(90, 16);
+            this.label75.TabIndex = 179;
+            this.label75.Text = "Retract Axis";
+            this.toolTip1.SetToolTip(this.label75, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.Color.Lime;
+            this.label78.Location = new System.Drawing.Point(405, 653);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(87, 16);
+            this.label78.TabIndex = 183;
+            this.label78.Text = "Retract IPM";
+            this.toolTip1.SetToolTip(this.label78, "Default settings, dont change unless your axis is different");
+            // 
+            // IsRadius
+            // 
+            this.IsRadius.AutoSize = true;
+            this.IsRadius.Checked = true;
+            this.IsRadius.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.IsRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsRadius.ForeColor = System.Drawing.Color.Lime;
+            this.IsRadius.Location = new System.Drawing.Point(732, 480);
+            this.IsRadius.Name = "IsRadius";
+            this.IsRadius.Size = new System.Drawing.Size(104, 24);
+            this.IsRadius.TabIndex = 95;
+            this.IsRadius.Text = "Is Radius";
+            this.toolTip1.SetToolTip(this.IsRadius, "moves one half of diameter");
+            this.IsRadius.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.ForeColor = System.Drawing.Color.Yellow;
+            this.checkBox4.Location = new System.Drawing.Point(134, 731);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(197, 24);
+            this.checkBox4.TabIndex = 71;
+            this.checkBox4.Text = "Corner Inside Radius";
+            this.toolTip1.SetToolTip(this.checkBox4, "corner of stock internal curve, set tool at corner of stock then start");
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.ForeColor = System.Drawing.Color.Yellow;
+            this.checkBox3.Location = new System.Drawing.Point(134, 710);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(125, 24);
+            this.checkBox3.TabIndex = 70;
+            this.checkBox3.Text = "Side Radius";
+            this.toolTip1.SetToolTip(this.checkBox3, "Side of stock cut, Center cutter in cut area then start");
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.Yellow;
+            this.checkBox2.Location = new System.Drawing.Point(134, 690);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(121, 24);
+            this.checkBox2.TabIndex = 69;
+            this.checkBox2.Text = "End Radius";
+            this.toolTip1.SetToolTip(this.checkBox2, "End of stock. set tool at dead center to start cut");
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Yellow;
+            this.checkBox1.Location = new System.Drawing.Point(134, 752);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(210, 24);
+            this.checkBox1.TabIndex = 68;
+            this.checkBox1.Text = "Corner Outside Radius";
+            this.toolTip1.SetToolTip(this.checkBox1, "corner of stock external curve, set tool at corner of stock then start");
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.Lime;
+            this.label64.Location = new System.Drawing.Point(715, 298);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(99, 16);
+            this.label64.TabIndex = 226;
+            this.label64.Text = "Tool Tip Axis";
+            this.toolTip1.SetToolTip(this.label64, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.ForeColor = System.Drawing.Color.Lime;
+            this.label77.Location = new System.Drawing.Point(722, 340);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(90, 16);
+            this.label77.TabIndex = 228;
+            this.label77.Text = "Tool Tip Dir";
+            this.toolTip1.SetToolTip(this.label77, "Default settings, dont change unless your axis is different\r\nThese can be save fr" +
+        "om settings.\r\n");
             // 
             // openFileDialog1
             // 
@@ -707,7 +921,7 @@ namespace Rummage_CNC
             this.richTextBox2.Location = new System.Drawing.Point(266, 22);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(280, 850);
+            this.richTextBox2.Size = new System.Drawing.Size(280, 942);
             this.richTextBox2.TabIndex = 0;
             this.richTextBox2.Text = "";
             // 
@@ -740,7 +954,7 @@ namespace Rummage_CNC
             this.DiagnosticsRTB.Location = new System.Drawing.Point(1495, 61);
             this.DiagnosticsRTB.Name = "DiagnosticsRTB";
             this.DiagnosticsRTB.ReadOnly = true;
-            this.DiagnosticsRTB.Size = new System.Drawing.Size(394, 811);
+            this.DiagnosticsRTB.Size = new System.Drawing.Size(394, 903);
             this.DiagnosticsRTB.TabIndex = 0;
             this.DiagnosticsRTB.Text = "";
             // 
@@ -988,6 +1202,41 @@ namespace Rummage_CNC
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.ToolDir);
+            this.tabPage1.Controls.Add(this.label77);
+            this.tabPage1.Controls.Add(this.ToolSetAxis1);
+            this.tabPage1.Controls.Add(this.label64);
+            this.tabPage1.Controls.Add(this.ShortFeedAxisBT);
+            this.tabPage1.Controls.Add(this.LongFeedAxisBT);
+            this.tabPage1.Controls.Add(this.ThreadRetractAxisBT);
+            this.tabPage1.Controls.Add(this.ThreadAxisBT);
+            this.tabPage1.Controls.Add(this.TaperIsRadius);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.ShortAxis);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.ThreadDirection);
+            this.tabPage1.Controls.Add(this.DOCRTB);
+            this.tabPage1.Controls.Add(this.DOCTableCheck);
+            this.tabPage1.Controls.Add(this.label82);
+            this.tabPage1.Controls.Add(this.ThreadDepth);
+            this.tabPage1.Controls.Add(this.label79);
+            this.tabPage1.Controls.Add(this.ThreadDOC);
+            this.tabPage1.Controls.Add(this.label78);
+            this.tabPage1.Controls.Add(this.ThreadRetractIPM);
+            this.tabPage1.Controls.Add(this.label75);
+            this.tabPage1.Controls.Add(this.label76);
+            this.tabPage1.Controls.Add(this.ThreadRetractLength);
+            this.tabPage1.Controls.Add(this.label74);
+            this.tabPage1.Controls.Add(this.label73);
+            this.tabPage1.Controls.Add(this.ThreadLength);
+            this.tabPage1.Controls.Add(this.label72);
+            this.tabPage1.Controls.Add(this.label71);
+            this.tabPage1.Controls.Add(this.label70);
+            this.tabPage1.Controls.Add(this.RadiusIPMReturn);
+            this.tabPage1.Controls.Add(this.label69);
+            this.tabPage1.Controls.Add(this.TaperPullBack);
+            this.tabPage1.Controls.Add(this.label68);
+            this.tabPage1.Controls.Add(this.ReturnIPMTaper);
             this.tabPage1.Controls.Add(this.CodeRunning);
             this.tabPage1.Controls.Add(this.label67);
             this.tabPage1.Controls.Add(this.RepeatBox);
@@ -1014,7 +1263,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.label62);
             this.tabPage1.Controls.Add(this.MetricTPI);
             this.tabPage1.Controls.Add(this.label63);
-            this.tabPage1.Controls.Add(this.label64);
             this.tabPage1.Controls.Add(this.GoThread);
             this.tabPage1.Controls.Add(this.label55);
             this.tabPage1.Controls.Add(this.DrillAxis);
@@ -1087,7 +1335,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.RPM);
             this.tabPage1.Controls.Add(this.label38);
             this.tabPage1.Controls.Add(this.label37);
-            this.tabPage1.Controls.Add(this.ExportCode);
             this.tabPage1.Controls.Add(this.label36);
             this.tabPage1.Controls.Add(this.CycleRadius);
             this.tabPage1.Controls.Add(this.label35);
@@ -1104,8 +1351,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.label33);
             this.tabPage1.Controls.Add(this.homeY);
             this.tabPage1.Controls.Add(this.homeX);
-            this.tabPage1.Controls.Add(this.label32);
-            this.tabPage1.Controls.Add(this.ToRemove);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.Slope);
             this.tabPage1.Controls.Add(this.label30);
@@ -1122,7 +1367,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.RGcodeRTB);
             this.tabPage1.Controls.Add(this.CurrentCycle);
             this.tabPage1.Controls.Add(this.ThreadRPM);
-            this.tabPage1.Controls.Add(this.ThreadPI);
             this.tabPage1.Controls.Add(this.CycleCount);
             this.tabPage1.Controls.Add(this.YnegTB);
             this.tabPage1.Controls.Add(this.YposTB);
@@ -1145,7 +1389,6 @@ namespace Rummage_CNC
             this.tabPage1.Controls.Add(this.XposOrder);
             this.tabPage1.Controls.Add(this.XnegOrder);
             this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.ThreadCycle);
             this.tabPage1.Controls.Add(this.Cycle4);
             this.tabPage1.Controls.Add(this.YnegIPM);
@@ -1173,6 +1416,365 @@ namespace Rummage_CNC
             this.tabPage1.Text = "DRO";
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
+            // ToolDir
+            // 
+            this.ToolDir.BackColor = System.Drawing.Color.Transparent;
+            this.ToolDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ToolDir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToolDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolDir.ForeColor = System.Drawing.Color.Cyan;
+            this.ToolDir.Location = new System.Drawing.Point(815, 336);
+            this.ToolDir.Name = "ToolDir";
+            this.ToolDir.Size = new System.Drawing.Size(30, 25);
+            this.ToolDir.TabIndex = 229;
+            this.ToolDir.Text = "+";
+            this.ToolDir.UseVisualStyleBackColor = false;
+            this.ToolDir.Click += new System.EventHandler(this.ToolDir_Click);
+            // 
+            // ToolSetAxis1
+            // 
+            this.ToolSetAxis1.BackColor = System.Drawing.Color.Transparent;
+            this.ToolSetAxis1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ToolSetAxis1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToolSetAxis1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolSetAxis1.ForeColor = System.Drawing.Color.Cyan;
+            this.ToolSetAxis1.Location = new System.Drawing.Point(815, 294);
+            this.ToolSetAxis1.Name = "ToolSetAxis1";
+            this.ToolSetAxis1.Size = new System.Drawing.Size(30, 25);
+            this.ToolSetAxis1.TabIndex = 227;
+            this.ToolSetAxis1.Text = "Y";
+            this.ToolSetAxis1.UseVisualStyleBackColor = false;
+            this.ToolSetAxis1.Click += new System.EventHandler(this.Axis_Click);
+            // 
+            // ShortFeedAxisBT
+            // 
+            this.ShortFeedAxisBT.BackColor = System.Drawing.Color.Transparent;
+            this.ShortFeedAxisBT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ShortFeedAxisBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShortFeedAxisBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShortFeedAxisBT.ForeColor = System.Drawing.Color.Cyan;
+            this.ShortFeedAxisBT.Location = new System.Drawing.Point(86, 940);
+            this.ShortFeedAxisBT.Name = "ShortFeedAxisBT";
+            this.ShortFeedAxisBT.Size = new System.Drawing.Size(30, 25);
+            this.ShortFeedAxisBT.TabIndex = 225;
+            this.ShortFeedAxisBT.Text = "Y";
+            this.ShortFeedAxisBT.UseVisualStyleBackColor = false;
+            this.ShortFeedAxisBT.Click += new System.EventHandler(this.Axis_Click);
+            // 
+            // LongFeedAxisBT
+            // 
+            this.LongFeedAxisBT.BackColor = System.Drawing.Color.Transparent;
+            this.LongFeedAxisBT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.LongFeedAxisBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LongFeedAxisBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LongFeedAxisBT.ForeColor = System.Drawing.Color.Cyan;
+            this.LongFeedAxisBT.Location = new System.Drawing.Point(86, 909);
+            this.LongFeedAxisBT.Name = "LongFeedAxisBT";
+            this.LongFeedAxisBT.Size = new System.Drawing.Size(30, 25);
+            this.LongFeedAxisBT.TabIndex = 224;
+            this.LongFeedAxisBT.Text = "X";
+            this.LongFeedAxisBT.UseVisualStyleBackColor = false;
+            this.LongFeedAxisBT.Click += new System.EventHandler(this.Axis_Click);
+            // 
+            // ThreadRetractAxisBT
+            // 
+            this.ThreadRetractAxisBT.BackColor = System.Drawing.Color.Transparent;
+            this.ThreadRetractAxisBT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ThreadRetractAxisBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThreadRetractAxisBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadRetractAxisBT.ForeColor = System.Drawing.Color.Cyan;
+            this.ThreadRetractAxisBT.Location = new System.Drawing.Point(484, 870);
+            this.ThreadRetractAxisBT.Name = "ThreadRetractAxisBT";
+            this.ThreadRetractAxisBT.Size = new System.Drawing.Size(30, 25);
+            this.ThreadRetractAxisBT.TabIndex = 223;
+            this.ThreadRetractAxisBT.Text = "Y";
+            this.ThreadRetractAxisBT.UseVisualStyleBackColor = false;
+            this.ThreadRetractAxisBT.Click += new System.EventHandler(this.Axis_Click);
+            // 
+            // ThreadAxisBT
+            // 
+            this.ThreadAxisBT.BackColor = System.Drawing.Color.Transparent;
+            this.ThreadAxisBT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ThreadAxisBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThreadAxisBT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadAxisBT.ForeColor = System.Drawing.Color.Cyan;
+            this.ThreadAxisBT.Location = new System.Drawing.Point(484, 837);
+            this.ThreadAxisBT.Name = "ThreadAxisBT";
+            this.ThreadAxisBT.Size = new System.Drawing.Size(30, 25);
+            this.ThreadAxisBT.TabIndex = 222;
+            this.ThreadAxisBT.Text = "X";
+            this.ThreadAxisBT.UseVisualStyleBackColor = false;
+            this.ThreadAxisBT.Click += new System.EventHandler(this.Axis_Click);
+            // 
+            // TaperIsRadius
+            // 
+            this.TaperIsRadius.AutoSize = true;
+            this.TaperIsRadius.Checked = true;
+            this.TaperIsRadius.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.TaperIsRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaperIsRadius.ForeColor = System.Drawing.Color.Lime;
+            this.TaperIsRadius.Location = new System.Drawing.Point(843, 731);
+            this.TaperIsRadius.Name = "TaperIsRadius";
+            this.TaperIsRadius.Size = new System.Drawing.Size(82, 20);
+            this.TaperIsRadius.TabIndex = 221;
+            this.TaperIsRadius.Text = "Is Radius";
+            this.TaperIsRadius.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Lime;
+            this.label32.Location = new System.Drawing.Point(840, 674);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(85, 16);
+            this.label32.TabIndex = 219;
+            this.label32.Text = "Short Move";
+            // 
+            // ShortAxis
+            // 
+            this.ShortAxis.BackColor = System.Drawing.Color.Transparent;
+            this.ShortAxis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.ShortAxis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ShortAxis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShortAxis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShortAxis.ForeColor = System.Drawing.Color.Cyan;
+            this.ShortAxis.Location = new System.Drawing.Point(831, 695);
+            this.ShortAxis.Name = "ShortAxis";
+            this.ShortAxis.Size = new System.Drawing.Size(102, 31);
+            this.ShortAxis.TabIndex = 220;
+            this.ShortAxis.Text = "Y Axis";
+            this.ShortAxis.UseVisualStyleBackColor = false;
+            this.ShortAxis.Click += new System.EventHandler(this.LongAxis_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Lime;
+            this.label22.Location = new System.Drawing.Point(384, 379);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(123, 16);
+            this.label22.TabIndex = 217;
+            this.label22.Text = "Thread Direction";
+            // 
+            // ThreadDirection
+            // 
+            this.ThreadDirection.BackColor = System.Drawing.Color.White;
+            this.ThreadDirection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.ThreadDirection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThreadDirection.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadDirection.ForeColor = System.Drawing.Color.Green;
+            this.ThreadDirection.Location = new System.Drawing.Point(406, 399);
+            this.ThreadDirection.Name = "ThreadDirection";
+            this.ThreadDirection.Size = new System.Drawing.Size(81, 31);
+            this.ThreadDirection.TabIndex = 218;
+            this.ThreadDirection.Text = "Right";
+            this.ThreadDirection.UseVisualStyleBackColor = false;
+            this.ThreadDirection.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // DOCRTB
+            // 
+            this.DOCRTB.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.DOCRTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOCRTB.Location = new System.Drawing.Point(545, 596);
+            this.DOCRTB.Name = "DOCRTB";
+            this.DOCRTB.ReadOnly = true;
+            this.DOCRTB.Size = new System.Drawing.Size(114, 301);
+            this.DOCRTB.TabIndex = 216;
+            this.DOCRTB.Text = "";
+            // 
+            // DOCTableCheck
+            // 
+            this.DOCTableCheck.Checked = true;
+            this.DOCTableCheck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.DOCTableCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOCTableCheck.ForeColor = System.Drawing.Color.Lime;
+            this.DOCTableCheck.Location = new System.Drawing.Point(550, 565);
+            this.DOCTableCheck.Name = "DOCTableCheck";
+            this.DOCTableCheck.Size = new System.Drawing.Size(103, 28);
+            this.DOCTableCheck.TabIndex = 215;
+            this.DOCTableCheck.Text = "DOC Table";
+            this.DOCTableCheck.UseVisualStyleBackColor = true;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label82.ForeColor = System.Drawing.Color.Lime;
+            this.label82.Location = new System.Drawing.Point(559, 498);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(89, 13);
+            this.label82.TabIndex = 190;
+            this.label82.Text = "Total DOC (In)";
+            // 
+            // ThreadDepth
+            // 
+            this.ThreadDepth.BackColor = System.Drawing.Color.Gray;
+            this.ThreadDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadDepth.Location = new System.Drawing.Point(545, 515);
+            this.ThreadDepth.MaxLength = 10;
+            this.ThreadDepth.Name = "ThreadDepth";
+            this.ThreadDepth.ReadOnly = true;
+            this.ThreadDepth.Size = new System.Drawing.Size(114, 31);
+            this.ThreadDepth.TabIndex = 187;
+            this.ThreadDepth.Text = "0.0";
+            this.ThreadDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ThreadDepth.TextChanged += new System.EventHandler(this.ThreadDepth_TextChanged);
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.ForeColor = System.Drawing.Color.Lime;
+            this.label79.Location = new System.Drawing.Point(555, 901);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(93, 16);
+            this.label79.TabIndex = 184;
+            this.label79.Text = "Manual DOC";
+            // 
+            // ThreadDOC
+            // 
+            this.ThreadDOC.BackColor = System.Drawing.Color.White;
+            this.ThreadDOC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadDOC.Location = new System.Drawing.Point(560, 920);
+            this.ThreadDOC.MaxLength = 8;
+            this.ThreadDOC.Name = "ThreadDOC";
+            this.ThreadDOC.Size = new System.Drawing.Size(82, 31);
+            this.ThreadDOC.TabIndex = 185;
+            this.ThreadDOC.Text = "0.005";
+            this.ThreadDOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // ThreadRetractIPM
+            // 
+            this.ThreadRetractIPM.BackColor = System.Drawing.Color.Transparent;
+            this.ThreadRetractIPM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.ThreadRetractIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThreadRetractIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadRetractIPM.ForeColor = System.Drawing.Color.Cyan;
+            this.ThreadRetractIPM.Location = new System.Drawing.Point(406, 673);
+            this.ThreadRetractIPM.Name = "ThreadRetractIPM";
+            this.ThreadRetractIPM.Size = new System.Drawing.Size(82, 31);
+            this.ThreadRetractIPM.TabIndex = 181;
+            this.ThreadRetractIPM.Text = "30";
+            this.ThreadRetractIPM.UseVisualStyleBackColor = false;
+            this.ThreadRetractIPM.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttons_MouseDown);
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.ForeColor = System.Drawing.Color.Lime;
+            this.label76.Location = new System.Drawing.Point(401, 599);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(93, 16);
+            this.label76.TabIndex = 176;
+            this.label76.Text = "Tool Retract";
+            // 
+            // ThreadRetractLength
+            // 
+            this.ThreadRetractLength.BackColor = System.Drawing.Color.White;
+            this.ThreadRetractLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadRetractLength.Location = new System.Drawing.Point(406, 619);
+            this.ThreadRetractLength.MaxLength = 8;
+            this.ThreadRetractLength.Name = "ThreadRetractLength";
+            this.ThreadRetractLength.Size = new System.Drawing.Size(82, 31);
+            this.ThreadRetractLength.TabIndex = 177;
+            this.ThreadRetractLength.Text = "0.082";
+            this.ThreadRetractLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.ForeColor = System.Drawing.Color.Lime;
+            this.label73.Location = new System.Drawing.Point(393, 544);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(107, 16);
+            this.label73.TabIndex = 172;
+            this.label73.Text = "Thread Length";
+            // 
+            // ThreadLength
+            // 
+            this.ThreadLength.BackColor = System.Drawing.Color.White;
+            this.ThreadLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThreadLength.Location = new System.Drawing.Point(406, 564);
+            this.ThreadLength.MaxLength = 8;
+            this.ThreadLength.Name = "ThreadLength";
+            this.ThreadLength.Size = new System.Drawing.Size(82, 31);
+            this.ThreadLength.TabIndex = 173;
+            this.ThreadLength.Text = "1.000";
+            this.ThreadLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.Lime;
+            this.label70.Location = new System.Drawing.Point(24, 847);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(82, 16);
+            this.label70.TabIndex = 166;
+            this.label70.Text = "Return IPM";
+            // 
+            // RadiusIPMReturn
+            // 
+            this.RadiusIPMReturn.BackColor = System.Drawing.Color.White;
+            this.RadiusIPMReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RadiusIPMReturn.Location = new System.Drawing.Point(14, 866);
+            this.RadiusIPMReturn.MaxLength = 2;
+            this.RadiusIPMReturn.Name = "RadiusIPMReturn";
+            this.RadiusIPMReturn.Size = new System.Drawing.Size(102, 31);
+            this.RadiusIPMReturn.TabIndex = 167;
+            this.RadiusIPMReturn.Text = "30";
+            this.RadiusIPMReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.Lime;
+            this.label68.Location = new System.Drawing.Point(725, 789);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(82, 16);
+            this.label68.TabIndex = 162;
+            this.label68.Text = "Return IPM";
+            // 
+            // ReturnIPMTaper
+            // 
+            this.ReturnIPMTaper.BackColor = System.Drawing.Color.White;
+            this.ReturnIPMTaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnIPMTaper.Location = new System.Drawing.Point(715, 808);
+            this.ReturnIPMTaper.MaxLength = 2;
+            this.ReturnIPMTaper.Name = "ReturnIPMTaper";
+            this.ReturnIPMTaper.Size = new System.Drawing.Size(102, 31);
+            this.ReturnIPMTaper.TabIndex = 163;
+            this.ReturnIPMTaper.Text = "30";
+            this.ReturnIPMTaper.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ReturnIPMTaper.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
+            // 
+            // CodeRunning
+            // 
+            this.CodeRunning.AutoSize = true;
+            this.CodeRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CodeRunning.ForeColor = System.Drawing.Color.Red;
+            this.CodeRunning.Location = new System.Drawing.Point(1416, 13);
+            this.CodeRunning.Name = "CodeRunning";
+            this.CodeRunning.Size = new System.Drawing.Size(0, 25);
+            this.CodeRunning.TabIndex = 161;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.Lime;
+            this.label67.Location = new System.Drawing.Point(1314, 736);
+            this.label67.Name = "label67";
+            this.label67.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label67.Size = new System.Drawing.Size(71, 13);
+            this.label67.TabIndex = 160;
+            this.label67.Text = "Run Cycles";
+            // 
             // RepeatBox
             // 
             this.RepeatBox.Location = new System.Drawing.Point(1296, 855);
@@ -1184,14 +1786,13 @@ namespace Rummage_CNC
             // 
             // ReloadcodeCB
             // 
-            this.ReloadcodeCB.AutoSize = true;
             this.ReloadcodeCB.Checked = true;
             this.ReloadcodeCB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ReloadcodeCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReloadcodeCB.ForeColor = System.Drawing.Color.Lime;
-            this.ReloadcodeCB.Location = new System.Drawing.Point(1290, 702);
+            this.ReloadcodeCB.Location = new System.Drawing.Point(1290, 695);
             this.ReloadcodeCB.Name = "ReloadcodeCB";
-            this.ReloadcodeCB.Size = new System.Drawing.Size(106, 20);
+            this.ReloadcodeCB.Size = new System.Drawing.Size(119, 28);
             this.ReloadcodeCB.TabIndex = 158;
             this.ReloadcodeCB.Text = "Cycle Code";
             this.ReloadcodeCB.UseVisualStyleBackColor = true;
@@ -1203,7 +1804,7 @@ namespace Rummage_CNC
             this.checkBoxTaperReturn.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxTaperReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxTaperReturn.ForeColor = System.Drawing.Color.Lime;
-            this.checkBoxTaperReturn.Location = new System.Drawing.Point(791, 760);
+            this.checkBoxTaperReturn.Location = new System.Drawing.Point(832, 761);
             this.checkBoxTaperReturn.Name = "checkBoxTaperReturn";
             this.checkBoxTaperReturn.Size = new System.Drawing.Size(105, 20);
             this.checkBoxTaperReturn.TabIndex = 157;
@@ -1212,37 +1813,22 @@ namespace Rummage_CNC
             // 
             // ExportsClearCB
             // 
-            this.ExportsClearCB.AutoSize = true;
             this.ExportsClearCB.Checked = true;
             this.ExportsClearCB.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ExportsClearCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExportsClearCB.ForeColor = System.Drawing.Color.Lime;
             this.ExportsClearCB.Location = new System.Drawing.Point(1290, 645);
             this.ExportsClearCB.Name = "ExportsClearCB";
-            this.ExportsClearCB.Size = new System.Drawing.Size(119, 20);
+            this.ExportsClearCB.Size = new System.Drawing.Size(119, 28);
             this.ExportsClearCB.TabIndex = 156;
             this.ExportsClearCB.Text = "Exports Clear";
             this.ExportsClearCB.UseVisualStyleBackColor = true;
-            // 
-            // IsRadius
-            // 
-            this.IsRadius.AutoSize = true;
-            this.IsRadius.Checked = true;
-            this.IsRadius.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.IsRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsRadius.ForeColor = System.Drawing.Color.Lime;
-            this.IsRadius.Location = new System.Drawing.Point(556, 380);
-            this.IsRadius.Name = "IsRadius";
-            this.IsRadius.Size = new System.Drawing.Size(104, 24);
-            this.IsRadius.TabIndex = 95;
-            this.IsRadius.Text = "Is Radius";
-            this.IsRadius.UseVisualStyleBackColor = true;
             // 
             // InchConv
             // 
             this.InchConv.BackColor = System.Drawing.Color.White;
             this.InchConv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InchConv.Location = new System.Drawing.Point(955, 864);
+            this.InchConv.Location = new System.Drawing.Point(1129, 348);
             this.InchConv.MaxLength = 10;
             this.InchConv.Name = "InchConv";
             this.InchConv.ReadOnly = true;
@@ -1256,7 +1842,7 @@ namespace Rummage_CNC
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label66.ForeColor = System.Drawing.Color.Lime;
-            this.label66.Location = new System.Drawing.Point(996, 844);
+            this.label66.Location = new System.Drawing.Point(1170, 328);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(34, 15);
             this.label66.TabIndex = 0;
@@ -1266,7 +1852,7 @@ namespace Rummage_CNC
             // 
             this.MetricConv.BackColor = System.Drawing.Color.White;
             this.MetricConv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetricConv.Location = new System.Drawing.Point(955, 808);
+            this.MetricConv.Location = new System.Drawing.Point(1129, 293);
             this.MetricConv.MaxLength = 10;
             this.MetricConv.Name = "MetricConv";
             this.MetricConv.Size = new System.Drawing.Size(114, 31);
@@ -1281,7 +1867,7 @@ namespace Rummage_CNC
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.ForeColor = System.Drawing.Color.Lime;
-            this.label56.Location = new System.Drawing.Point(974, 788);
+            this.label56.Location = new System.Drawing.Point(1148, 273);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(75, 15);
             this.label56.TabIndex = 0;
@@ -1290,9 +1876,10 @@ namespace Rummage_CNC
             // label65
             // 
             this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.Aqua;
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.ForeColor = System.Drawing.Color.Lime;
-            this.label65.Location = new System.Drawing.Point(952, 760);
+            this.label65.ForeColor = System.Drawing.Color.Black;
+            this.label65.Location = new System.Drawing.Point(1126, 245);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(119, 20);
             this.label65.TabIndex = 0;
@@ -1303,17 +1890,17 @@ namespace Rummage_CNC
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Lime;
-            this.label24.Location = new System.Drawing.Point(555, 308);
+            this.label24.Location = new System.Drawing.Point(736, 424);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(98, 32);
+            this.label24.Size = new System.Drawing.Size(90, 16);
             this.label24.TabIndex = 0;
-            this.label24.Text = " Stock Diam \r\nOr Thickness";
+            this.label24.Text = " Stock Diam";
             // 
             // ReturnToStockDiam
             // 
             this.ReturnToStockDiam.BackColor = System.Drawing.Color.White;
             this.ReturnToStockDiam.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnToStockDiam.Location = new System.Drawing.Point(552, 345);
+            this.ReturnToStockDiam.Location = new System.Drawing.Point(730, 445);
             this.ReturnToStockDiam.MaxLength = 8;
             this.ReturnToStockDiam.Name = "ReturnToStockDiam";
             this.ReturnToStockDiam.Size = new System.Drawing.Size(105, 31);
@@ -1330,9 +1917,9 @@ namespace Rummage_CNC
             this.CancelLimit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelLimit.ForeColor = System.Drawing.Color.Red;
-            this.CancelLimit.Location = new System.Drawing.Point(539, 470);
+            this.CancelLimit.Location = new System.Drawing.Point(915, 445);
             this.CancelLimit.Name = "CancelLimit";
-            this.CancelLimit.Size = new System.Drawing.Size(709, 32);
+            this.CancelLimit.Size = new System.Drawing.Size(143, 37);
             this.CancelLimit.TabIndex = 100;
             this.CancelLimit.Text = "STOP";
             this.CancelLimit.UseVisualStyleBackColor = false;
@@ -1346,11 +1933,11 @@ namespace Rummage_CNC
             this.LimitA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LimitA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LimitA.ForeColor = System.Drawing.Color.Black;
-            this.LimitA.Location = new System.Drawing.Point(1115, 255);
+            this.LimitA.Location = new System.Drawing.Point(944, 390);
             this.LimitA.Name = "LimitA";
-            this.LimitA.Size = new System.Drawing.Size(133, 31);
+            this.LimitA.Size = new System.Drawing.Size(84, 31);
             this.LimitA.TabIndex = 99;
-            this.LimitA.Text = "Home Limit A";
+            this.LimitA.Text = "Limit A";
             this.LimitA.UseVisualStyleBackColor = false;
             this.LimitA.Click += new System.EventHandler(this.LimitA_Click);
             // 
@@ -1362,11 +1949,11 @@ namespace Rummage_CNC
             this.LimitZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LimitZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LimitZ.ForeColor = System.Drawing.Color.Black;
-            this.LimitZ.Location = new System.Drawing.Point(971, 255);
+            this.LimitZ.Location = new System.Drawing.Point(944, 340);
             this.LimitZ.Name = "LimitZ";
-            this.LimitZ.Size = new System.Drawing.Size(133, 31);
+            this.LimitZ.Size = new System.Drawing.Size(84, 31);
             this.LimitZ.TabIndex = 98;
-            this.LimitZ.Text = "Home Limit Z";
+            this.LimitZ.Text = "Limit Z";
             this.LimitZ.UseVisualStyleBackColor = false;
             this.LimitZ.Click += new System.EventHandler(this.LimitZ_Click);
             // 
@@ -1378,11 +1965,11 @@ namespace Rummage_CNC
             this.LimitY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LimitY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LimitY.ForeColor = System.Drawing.Color.Black;
-            this.LimitY.Location = new System.Drawing.Point(827, 255);
+            this.LimitY.Location = new System.Drawing.Point(944, 290);
             this.LimitY.Name = "LimitY";
-            this.LimitY.Size = new System.Drawing.Size(133, 31);
+            this.LimitY.Size = new System.Drawing.Size(84, 31);
             this.LimitY.TabIndex = 97;
-            this.LimitY.Text = "Home Limit Y";
+            this.LimitY.Text = "Limit Y";
             this.LimitY.UseVisualStyleBackColor = false;
             this.LimitY.Click += new System.EventHandler(this.LimitY_Click);
             // 
@@ -1394,11 +1981,11 @@ namespace Rummage_CNC
             this.LimitX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LimitX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LimitX.ForeColor = System.Drawing.Color.Black;
-            this.LimitX.Location = new System.Drawing.Point(683, 255);
+            this.LimitX.Location = new System.Drawing.Point(944, 240);
             this.LimitX.Name = "LimitX";
-            this.LimitX.Size = new System.Drawing.Size(133, 31);
+            this.LimitX.Size = new System.Drawing.Size(84, 31);
             this.LimitX.TabIndex = 96;
-            this.LimitX.Text = "Home Limit X";
+            this.LimitX.Text = "Limit X";
             this.LimitX.UseVisualStyleBackColor = false;
             this.LimitX.Click += new System.EventHandler(this.LimitX_Click);
             // 
@@ -1410,7 +1997,7 @@ namespace Rummage_CNC
             this.ToolSet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ToolSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToolSet.ForeColor = System.Drawing.Color.Black;
-            this.ToolSet.Location = new System.Drawing.Point(539, 255);
+            this.ToolSet.Location = new System.Drawing.Point(714, 240);
             this.ToolSet.Name = "ToolSet";
             this.ToolSet.Size = new System.Drawing.Size(133, 31);
             this.ToolSet.TabIndex = 93;
@@ -1423,11 +2010,11 @@ namespace Rummage_CNC
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.ForeColor = System.Drawing.Color.Lime;
-            this.label61.Location = new System.Drawing.Point(536, 789);
+            this.label61.Location = new System.Drawing.Point(989, 789);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(99, 16);
+            this.label61.Size = new System.Drawing.Size(82, 16);
             this.label61.TabIndex = 0;
-            this.label61.Text = "Rapid Speed";
+            this.label61.Text = "Return IPM";
             // 
             // DrillRapid
             // 
@@ -1436,7 +2023,7 @@ namespace Rummage_CNC
             this.DrillRapid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrillRapid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrillRapid.ForeColor = System.Drawing.Color.Cyan;
-            this.DrillRapid.Location = new System.Drawing.Point(545, 809);
+            this.DrillRapid.Location = new System.Drawing.Point(990, 808);
             this.DrillRapid.Name = "DrillRapid";
             this.DrillRapid.Size = new System.Drawing.Size(81, 31);
             this.DrillRapid.TabIndex = 76;
@@ -1448,23 +2035,24 @@ namespace Rummage_CNC
             // 
             this.TPI.BackColor = System.Drawing.Color.White;
             this.TPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TPI.Location = new System.Drawing.Point(955, 636);
+            this.TPI.Location = new System.Drawing.Point(406, 509);
             this.TPI.MaxLength = 10;
             this.TPI.Name = "TPI";
-            this.TPI.ReadOnly = true;
-            this.TPI.Size = new System.Drawing.Size(114, 31);
+            this.TPI.Size = new System.Drawing.Size(81, 31);
             this.TPI.TabIndex = 0;
             this.TPI.Text = "0";
             this.TPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TPI.TextChanged += new System.EventHandler(this.TPI_TextChanged);
             // 
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.ForeColor = System.Drawing.Color.Lime;
-            this.label62.Location = new System.Drawing.Point(1000, 615);
+            this.label62.BackColor = System.Drawing.Color.Aqua;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.ForeColor = System.Drawing.Color.Black;
+            this.label62.Location = new System.Drawing.Point(431, 489);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(28, 15);
+            this.label62.Size = new System.Drawing.Size(31, 16);
             this.label62.TabIndex = 0;
             this.label62.Text = "TPI";
             // 
@@ -1472,12 +2060,12 @@ namespace Rummage_CNC
             // 
             this.MetricTPI.BackColor = System.Drawing.Color.White;
             this.MetricTPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetricTPI.Location = new System.Drawing.Point(955, 581);
+            this.MetricTPI.Location = new System.Drawing.Point(406, 454);
             this.MetricTPI.MaxLength = 10;
             this.MetricTPI.Name = "MetricTPI";
-            this.MetricTPI.Size = new System.Drawing.Size(114, 31);
+            this.MetricTPI.Size = new System.Drawing.Size(81, 31);
             this.MetricTPI.TabIndex = 87;
-            this.MetricTPI.Text = "1.75";
+            this.MetricTPI.Text = "0";
             this.MetricTPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MetricTPI.TextChanged += new System.EventHandler(this.MetricTPI_TextChanged);
             this.MetricTPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
@@ -1485,43 +2073,34 @@ namespace Rummage_CNC
             // label63
             // 
             this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.ForeColor = System.Drawing.Color.Lime;
-            this.label63.Location = new System.Drawing.Point(967, 561);
+            this.label63.BackColor = System.Drawing.Color.Aqua;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.ForeColor = System.Drawing.Color.Black;
+            this.label63.Location = new System.Drawing.Point(404, 434);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(83, 15);
+            this.label63.Size = new System.Drawing.Size(87, 16);
             this.label63.TabIndex = 0;
             this.label63.Text = "Metric Pitch";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.Lime;
-            this.label64.Location = new System.Drawing.Point(956, 533);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(111, 20);
-            this.label64.TabIndex = 0;
-            this.label64.Text = "Metric to TPI";
             // 
             // GoThread
             // 
             this.GoThread.AutoSize = true;
             this.GoThread.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoThread.ForeColor = System.Drawing.Color.Lime;
-            this.GoThread.Location = new System.Drawing.Point(80, 926);
+            this.GoThread.Location = new System.Drawing.Point(572, 322);
             this.GoThread.Name = "GoThread";
-            this.GoThread.Size = new System.Drawing.Size(177, 25);
+            this.GoThread.Size = new System.Drawing.Size(61, 25);
             this.GoThread.TabIndex = 0;
-            this.GoThread.Text = "Waiting For TDC!";
-            this.GoThread.TextChanged += new System.EventHandler(this.GoThread_TextChanged);
+            this.GoThread.Text = "TDC!";
+            this.GoThread.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GoThread.ForeColorChanged += new System.EventHandler(this.GoThread_TextChanged);
             // 
             // label55
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label55.ForeColor = System.Drawing.Color.Lime;
-            this.label55.Location = new System.Drawing.Point(568, 844);
+            this.label55.Location = new System.Drawing.Point(1013, 844);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(36, 16);
             this.label55.TabIndex = 0;
@@ -1535,20 +2114,20 @@ namespace Rummage_CNC
             this.DrillAxis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrillAxis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrillAxis.ForeColor = System.Drawing.Color.Cyan;
-            this.DrillAxis.Location = new System.Drawing.Point(545, 866);
+            this.DrillAxis.Location = new System.Drawing.Point(990, 866);
             this.DrillAxis.Name = "DrillAxis";
             this.DrillAxis.Size = new System.Drawing.Size(81, 31);
             this.DrillAxis.TabIndex = 77;
-            this.DrillAxis.Text = "x";
+            this.DrillAxis.Text = "X";
             this.DrillAxis.UseVisualStyleBackColor = false;
-            this.DrillAxis.Click += new System.EventHandler(this.DrillAxis_Click);
+            this.DrillAxis.Click += new System.EventHandler(this.Axis_Click);
             // 
             // AnegTB
             // 
             this.AnegTB.BackColor = System.Drawing.Color.White;
             this.AnegTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnegTB.ForeColor = System.Drawing.Color.Black;
-            this.AnegTB.Location = new System.Drawing.Point(14, 523);
+            this.AnegTB.Location = new System.Drawing.Point(14, 517);
             this.AnegTB.MaxLength = 6;
             this.AnegTB.Name = "AnegTB";
             this.AnegTB.Size = new System.Drawing.Size(102, 31);
@@ -1562,7 +2141,7 @@ namespace Rummage_CNC
             this.AposTB.BackColor = System.Drawing.Color.White;
             this.AposTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AposTB.ForeColor = System.Drawing.Color.Black;
-            this.AposTB.Location = new System.Drawing.Point(14, 560);
+            this.AposTB.Location = new System.Drawing.Point(14, 554);
             this.AposTB.MaxLength = 6;
             this.AposTB.Name = "AposTB";
             this.AposTB.Size = new System.Drawing.Size(102, 31);
@@ -1576,7 +2155,7 @@ namespace Rummage_CNC
             this.ZposTB.BackColor = System.Drawing.Color.White;
             this.ZposTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZposTB.ForeColor = System.Drawing.Color.Black;
-            this.ZposTB.Location = new System.Drawing.Point(14, 471);
+            this.ZposTB.Location = new System.Drawing.Point(14, 465);
             this.ZposTB.MaxLength = 6;
             this.ZposTB.Name = "ZposTB";
             this.ZposTB.Size = new System.Drawing.Size(102, 31);
@@ -1590,7 +2169,7 @@ namespace Rummage_CNC
             this.ZnegTB.BackColor = System.Drawing.Color.White;
             this.ZnegTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZnegTB.ForeColor = System.Drawing.Color.Black;
-            this.ZnegTB.Location = new System.Drawing.Point(14, 434);
+            this.ZnegTB.Location = new System.Drawing.Point(14, 428);
             this.ZnegTB.MaxLength = 6;
             this.ZnegTB.Name = "ZnegTB";
             this.ZnegTB.Size = new System.Drawing.Size(102, 31);
@@ -1606,7 +2185,7 @@ namespace Rummage_CNC
             this.AnegIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnegIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnegIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.AnegIPM.Location = new System.Drawing.Point(195, 523);
+            this.AnegIPM.Location = new System.Drawing.Point(195, 517);
             this.AnegIPM.Name = "AnegIPM";
             this.AnegIPM.Size = new System.Drawing.Size(90, 31);
             this.AnegIPM.TabIndex = 52;
@@ -1621,7 +2200,7 @@ namespace Rummage_CNC
             this.AposIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AposIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AposIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.AposIPM.Location = new System.Drawing.Point(195, 560);
+            this.AposIPM.Location = new System.Drawing.Point(195, 554);
             this.AposIPM.Name = "AposIPM";
             this.AposIPM.Size = new System.Drawing.Size(90, 31);
             this.AposIPM.TabIndex = 56;
@@ -1636,7 +2215,7 @@ namespace Rummage_CNC
             this.AnegMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnegMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnegMove.ForeColor = System.Drawing.Color.Cyan;
-            this.AnegMove.Location = new System.Drawing.Point(122, 523);
+            this.AnegMove.Location = new System.Drawing.Point(122, 517);
             this.AnegMove.Name = "AnegMove";
             this.AnegMove.Size = new System.Drawing.Size(67, 31);
             this.AnegMove.TabIndex = 51;
@@ -1651,7 +2230,7 @@ namespace Rummage_CNC
             this.AposMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AposMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AposMove.ForeColor = System.Drawing.Color.Cyan;
-            this.AposMove.Location = new System.Drawing.Point(122, 560);
+            this.AposMove.Location = new System.Drawing.Point(122, 554);
             this.AposMove.Name = "AposMove";
             this.AposMove.Size = new System.Drawing.Size(67, 31);
             this.AposMove.TabIndex = 55;
@@ -1666,7 +2245,7 @@ namespace Rummage_CNC
             this.ZposIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZposIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZposIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.ZposIPM.Location = new System.Drawing.Point(195, 471);
+            this.ZposIPM.Location = new System.Drawing.Point(195, 465);
             this.ZposIPM.Name = "ZposIPM";
             this.ZposIPM.Size = new System.Drawing.Size(90, 31);
             this.ZposIPM.TabIndex = 48;
@@ -1681,7 +2260,7 @@ namespace Rummage_CNC
             this.ZnegIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZnegIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZnegIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.ZnegIPM.Location = new System.Drawing.Point(195, 434);
+            this.ZnegIPM.Location = new System.Drawing.Point(195, 428);
             this.ZnegIPM.Name = "ZnegIPM";
             this.ZnegIPM.Size = new System.Drawing.Size(90, 31);
             this.ZnegIPM.TabIndex = 44;
@@ -1696,7 +2275,7 @@ namespace Rummage_CNC
             this.ZposMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZposMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZposMove.ForeColor = System.Drawing.Color.Cyan;
-            this.ZposMove.Location = new System.Drawing.Point(122, 471);
+            this.ZposMove.Location = new System.Drawing.Point(122, 465);
             this.ZposMove.Name = "ZposMove";
             this.ZposMove.Size = new System.Drawing.Size(67, 31);
             this.ZposMove.TabIndex = 47;
@@ -1711,7 +2290,7 @@ namespace Rummage_CNC
             this.ZnegMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ZnegMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ZnegMove.ForeColor = System.Drawing.Color.Cyan;
-            this.ZnegMove.Location = new System.Drawing.Point(122, 434);
+            this.ZnegMove.Location = new System.Drawing.Point(122, 428);
             this.ZnegMove.Name = "ZnegMove";
             this.ZnegMove.Size = new System.Drawing.Size(67, 31);
             this.ZnegMove.TabIndex = 43;
@@ -1722,13 +2301,14 @@ namespace Rummage_CNC
             // label54
             // 
             this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Aqua;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.Lime;
-            this.label54.Location = new System.Drawing.Point(416, 243);
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(402, 238);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(65, 20);
+            this.label54.Size = new System.Drawing.Size(89, 20);
             this.label54.TabIndex = 0;
-            this.label54.Text = "Thread";
+            this.label54.Text = "Threading";
             // 
             // manualAn
             // 
@@ -1739,7 +2319,7 @@ namespace Rummage_CNC
             this.manualAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualAn.ForeColor = System.Drawing.Color.Black;
             this.manualAn.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Left_Icon_64;
-            this.manualAn.Location = new System.Drawing.Point(985, 78);
+            this.manualAn.Location = new System.Drawing.Point(1004, 78);
             this.manualAn.Name = "manualAn";
             this.manualAn.Size = new System.Drawing.Size(65, 65);
             this.manualAn.TabIndex = 21;
@@ -1757,7 +2337,7 @@ namespace Rummage_CNC
             this.manualAp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualAp.ForeColor = System.Drawing.Color.Black;
             this.manualAp.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Right_Icon_64;
-            this.manualAp.Location = new System.Drawing.Point(1116, 78);
+            this.manualAp.Location = new System.Drawing.Point(1135, 78);
             this.manualAp.Name = "manualAp";
             this.manualAp.Size = new System.Drawing.Size(65, 65);
             this.manualAp.TabIndex = 22;
@@ -1775,7 +2355,7 @@ namespace Rummage_CNC
             this.manualZn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualZn.ForeColor = System.Drawing.Color.Black;
             this.manualZn.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Up_Icon_64;
-            this.manualZn.Location = new System.Drawing.Point(1051, 13);
+            this.manualZn.Location = new System.Drawing.Point(1070, 13);
             this.manualZn.Name = "manualZn";
             this.manualZn.Size = new System.Drawing.Size(65, 65);
             this.manualZn.TabIndex = 23;
@@ -1793,7 +2373,7 @@ namespace Rummage_CNC
             this.manualZp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualZp.ForeColor = System.Drawing.Color.Black;
             this.manualZp.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Down_Icon_64;
-            this.manualZp.Location = new System.Drawing.Point(1051, 143);
+            this.manualZp.Location = new System.Drawing.Point(1070, 143);
             this.manualZp.Name = "manualZp";
             this.manualZp.Size = new System.Drawing.Size(65, 65);
             this.manualZp.TabIndex = 24;
@@ -1809,7 +2389,7 @@ namespace Rummage_CNC
             this.homeA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeA.ForeColor = System.Drawing.Color.Cyan;
-            this.homeA.Location = new System.Drawing.Point(394, 171);
+            this.homeA.Location = new System.Drawing.Point(414, 171);
             this.homeA.Name = "homeA";
             this.homeA.Size = new System.Drawing.Size(89, 31);
             this.homeA.TabIndex = 14;
@@ -1822,7 +2402,7 @@ namespace Rummage_CNC
             this.MetricA.BackColor = System.Drawing.Color.White;
             this.MetricA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricA.ForeColor = System.Drawing.Color.Black;
-            this.MetricA.Location = new System.Drawing.Point(100, 171);
+            this.MetricA.Location = new System.Drawing.Point(120, 171);
             this.MetricA.Name = "MetricA";
             this.MetricA.ReadOnly = true;
             this.MetricA.Size = new System.Drawing.Size(118, 31);
@@ -1835,7 +2415,7 @@ namespace Rummage_CNC
             this.incha.BackColor = System.Drawing.Color.White;
             this.incha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incha.ForeColor = System.Drawing.Color.Black;
-            this.incha.Location = new System.Drawing.Point(263, 171);
+            this.incha.Location = new System.Drawing.Point(283, 171);
             this.incha.Name = "incha";
             this.incha.ReadOnly = true;
             this.incha.Size = new System.Drawing.Size(118, 31);
@@ -1851,7 +2431,7 @@ namespace Rummage_CNC
             this.DoubleA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoubleA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoubleA.ForeColor = System.Drawing.Color.Cyan;
-            this.DoubleA.Location = new System.Drawing.Point(573, 171);
+            this.DoubleA.Location = new System.Drawing.Point(593, 171);
             this.DoubleA.Name = "DoubleA";
             this.DoubleA.Size = new System.Drawing.Size(58, 31);
             this.DoubleA.TabIndex = 16;
@@ -1866,7 +2446,7 @@ namespace Rummage_CNC
             this.HalfA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HalfA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HalfA.ForeColor = System.Drawing.Color.Cyan;
-            this.HalfA.Location = new System.Drawing.Point(501, 171);
+            this.HalfA.Location = new System.Drawing.Point(521, 171);
             this.HalfA.Name = "HalfA";
             this.HalfA.Size = new System.Drawing.Size(58, 31);
             this.HalfA.TabIndex = 15;
@@ -1881,7 +2461,7 @@ namespace Rummage_CNC
             this.label52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label52.ForeColor = System.Drawing.Color.Lime;
-            this.label52.Location = new System.Drawing.Point(227, 173);
+            this.label52.Location = new System.Drawing.Point(247, 173);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(27, 25);
             this.label52.TabIndex = 0;
@@ -1896,7 +2476,7 @@ namespace Rummage_CNC
             this.zeroA.ForeColor = System.Drawing.Color.Black;
             this.zeroA.Location = new System.Drawing.Point(14, 171);
             this.zeroA.Name = "zeroA";
-            this.zeroA.Size = new System.Drawing.Size(71, 31);
+            this.zeroA.Size = new System.Drawing.Size(100, 31);
             this.zeroA.TabIndex = 4;
             this.zeroA.Text = "Clear";
             this.zeroA.UseVisualStyleBackColor = false;
@@ -1909,7 +2489,7 @@ namespace Rummage_CNC
             this.homeZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeZ.ForeColor = System.Drawing.Color.Cyan;
-            this.homeZ.Location = new System.Drawing.Point(394, 127);
+            this.homeZ.Location = new System.Drawing.Point(414, 127);
             this.homeZ.Name = "homeZ";
             this.homeZ.Size = new System.Drawing.Size(89, 31);
             this.homeZ.TabIndex = 11;
@@ -1922,7 +2502,7 @@ namespace Rummage_CNC
             this.MetricZ.BackColor = System.Drawing.Color.White;
             this.MetricZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricZ.ForeColor = System.Drawing.Color.Black;
-            this.MetricZ.Location = new System.Drawing.Point(100, 127);
+            this.MetricZ.Location = new System.Drawing.Point(120, 127);
             this.MetricZ.Name = "MetricZ";
             this.MetricZ.ReadOnly = true;
             this.MetricZ.Size = new System.Drawing.Size(118, 31);
@@ -1935,7 +2515,7 @@ namespace Rummage_CNC
             this.inchz.BackColor = System.Drawing.Color.White;
             this.inchz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inchz.ForeColor = System.Drawing.Color.Black;
-            this.inchz.Location = new System.Drawing.Point(263, 127);
+            this.inchz.Location = new System.Drawing.Point(283, 127);
             this.inchz.Name = "inchz";
             this.inchz.ReadOnly = true;
             this.inchz.Size = new System.Drawing.Size(118, 31);
@@ -1951,7 +2531,7 @@ namespace Rummage_CNC
             this.DoubleZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoubleZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoubleZ.ForeColor = System.Drawing.Color.Cyan;
-            this.DoubleZ.Location = new System.Drawing.Point(573, 127);
+            this.DoubleZ.Location = new System.Drawing.Point(593, 127);
             this.DoubleZ.Name = "DoubleZ";
             this.DoubleZ.Size = new System.Drawing.Size(58, 31);
             this.DoubleZ.TabIndex = 13;
@@ -1966,7 +2546,7 @@ namespace Rummage_CNC
             this.HalfZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HalfZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HalfZ.ForeColor = System.Drawing.Color.Cyan;
-            this.HalfZ.Location = new System.Drawing.Point(501, 127);
+            this.HalfZ.Location = new System.Drawing.Point(521, 127);
             this.HalfZ.Name = "HalfZ";
             this.HalfZ.Size = new System.Drawing.Size(58, 31);
             this.HalfZ.TabIndex = 12;
@@ -1981,7 +2561,7 @@ namespace Rummage_CNC
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.Location = new System.Drawing.Point(227, 129);
+            this.label11.Location = new System.Drawing.Point(247, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 25);
             this.label11.TabIndex = 0;
@@ -1996,7 +2576,7 @@ namespace Rummage_CNC
             this.zeroZ.ForeColor = System.Drawing.Color.Black;
             this.zeroZ.Location = new System.Drawing.Point(14, 127);
             this.zeroZ.Name = "zeroZ";
-            this.zeroZ.Size = new System.Drawing.Size(71, 31);
+            this.zeroZ.Size = new System.Drawing.Size(100, 31);
             this.zeroZ.TabIndex = 3;
             this.zeroZ.Text = "Clear";
             this.zeroZ.UseVisualStyleBackColor = false;
@@ -2165,13 +2745,14 @@ namespace Rummage_CNC
             // label49
             // 
             this.label49.AutoSize = true;
+            this.label49.BackColor = System.Drawing.Color.Aqua;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.ForeColor = System.Drawing.Color.Lime;
-            this.label49.Location = new System.Drawing.Point(1140, 533);
+            this.label49.ForeColor = System.Drawing.Color.Black;
+            this.label49.Location = new System.Drawing.Point(1123, 533);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(90, 20);
+            this.label49.Size = new System.Drawing.Size(123, 20);
             this.label49.TabIndex = 0;
-            this.label49.Text = "Calculator";
+            this.label49.Text = "Cut Calculator";
             // 
             // Drill
             // 
@@ -2181,7 +2762,7 @@ namespace Rummage_CNC
             this.Drill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Drill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Drill.ForeColor = System.Drawing.Color.Black;
-            this.Drill.Location = new System.Drawing.Point(545, 920);
+            this.Drill.Location = new System.Drawing.Point(990, 920);
             this.Drill.Name = "Drill";
             this.Drill.Size = new System.Drawing.Size(81, 31);
             this.Drill.TabIndex = 78;
@@ -2193,7 +2774,7 @@ namespace Rummage_CNC
             // 
             this.peckDepth.BackColor = System.Drawing.Color.White;
             this.peckDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.peckDepth.Location = new System.Drawing.Point(545, 695);
+            this.peckDepth.Location = new System.Drawing.Point(990, 695);
             this.peckDepth.Name = "peckDepth";
             this.peckDepth.Size = new System.Drawing.Size(81, 31);
             this.peckDepth.TabIndex = 75;
@@ -2206,7 +2787,7 @@ namespace Rummage_CNC
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.ForeColor = System.Drawing.Color.Lime;
-            this.label45.Location = new System.Drawing.Point(543, 674);
+            this.label45.Location = new System.Drawing.Point(988, 674);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(87, 16);
             this.label45.TabIndex = 0;
@@ -2216,11 +2797,11 @@ namespace Rummage_CNC
             // 
             this.drillFeed.BackColor = System.Drawing.Color.White;
             this.drillFeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drillFeed.Location = new System.Drawing.Point(545, 636);
+            this.drillFeed.Location = new System.Drawing.Point(990, 636);
             this.drillFeed.Name = "drillFeed";
             this.drillFeed.Size = new System.Drawing.Size(81, 31);
             this.drillFeed.TabIndex = 74;
-            this.drillFeed.Text = "2";
+            this.drillFeed.Text = "5";
             this.drillFeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.drillFeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
@@ -2229,17 +2810,17 @@ namespace Rummage_CNC
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.ForeColor = System.Drawing.Color.Lime;
-            this.label44.Location = new System.Drawing.Point(549, 617);
+            this.label44.Location = new System.Drawing.Point(993, 616);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(73, 16);
+            this.label44.Size = new System.Drawing.Size(75, 16);
             this.label44.TabIndex = 0;
-            this.label44.Text = "Feed IPM";
+            this.label44.Text = "Drill Feed";
             // 
             // drillDepth
             // 
             this.drillDepth.BackColor = System.Drawing.Color.White;
             this.drillDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.drillDepth.Location = new System.Drawing.Point(545, 581);
+            this.drillDepth.Location = new System.Drawing.Point(990, 581);
             this.drillDepth.Name = "drillDepth";
             this.drillDepth.Size = new System.Drawing.Size(81, 31);
             this.drillDepth.TabIndex = 73;
@@ -2252,70 +2833,18 @@ namespace Rummage_CNC
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.Lime;
-            this.label42.Location = new System.Drawing.Point(546, 561);
+            this.label42.Location = new System.Drawing.Point(991, 561);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(80, 16);
             this.label42.TabIndex = 0;
             this.label42.Text = "Drill Depth";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.ForeColor = System.Drawing.Color.Lime;
-            this.checkBox4.Location = new System.Drawing.Point(423, 842);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(41, 24);
-            this.checkBox4.TabIndex = 71;
-            this.checkBox4.Text = "D";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.ForeColor = System.Drawing.Color.Yellow;
-            this.checkBox3.Location = new System.Drawing.Point(423, 812);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(40, 24);
-            this.checkBox3.TabIndex = 70;
-            this.checkBox3.Text = "C";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.Red;
-            this.checkBox2.Location = new System.Drawing.Point(423, 782);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(40, 24);
-            this.checkBox2.TabIndex = 69;
-            this.checkBox2.Text = "B";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.DarkGray;
-            this.checkBox1.Location = new System.Drawing.Point(423, 752);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(40, 24);
-            this.checkBox1.TabIndex = 68;
-            this.checkBox1.Text = "A";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
             // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.Lime;
-            this.label43.Location = new System.Drawing.Point(409, 674);
+            this.label43.Location = new System.Drawing.Point(28, 790);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(73, 16);
             this.label43.TabIndex = 0;
@@ -2325,8 +2854,8 @@ namespace Rummage_CNC
             // 
             this.DegreeIPM.BackColor = System.Drawing.Color.White;
             this.DegreeIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DegreeIPM.Location = new System.Drawing.Point(395, 695);
-            this.DegreeIPM.MaxLength = 3;
+            this.DegreeIPM.Location = new System.Drawing.Point(14, 809);
+            this.DegreeIPM.MaxLength = 2;
             this.DegreeIPM.Name = "DegreeIPM";
             this.DegreeIPM.Size = new System.Drawing.Size(102, 31);
             this.DegreeIPM.TabIndex = 67;
@@ -2339,17 +2868,17 @@ namespace Rummage_CNC
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.Lime;
-            this.label40.Location = new System.Drawing.Point(825, 560);
+            this.label40.Location = new System.Drawing.Point(852, 560);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(33, 16);
+            this.label40.Size = new System.Drawing.Size(59, 16);
             this.label40.TabIndex = 0;
-            this.label40.Text = "IPM";
+            this.label40.Text = "Cut IPM";
             // 
             // IPMtaper
             // 
             this.IPMtaper.BackColor = System.Drawing.Color.White;
             this.IPMtaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IPMtaper.Location = new System.Drawing.Point(791, 581);
+            this.IPMtaper.Location = new System.Drawing.Point(831, 581);
             this.IPMtaper.MaxLength = 2;
             this.IPMtaper.Name = "IPMtaper";
             this.IPMtaper.Size = new System.Drawing.Size(102, 31);
@@ -2363,7 +2892,7 @@ namespace Rummage_CNC
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.Lime;
-            this.label39.Location = new System.Drawing.Point(796, 616);
+            this.label39.Location = new System.Drawing.Point(836, 616);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(91, 16);
             this.label39.TabIndex = 0;
@@ -2373,7 +2902,7 @@ namespace Rummage_CNC
             // 
             this.DOCtaper.BackColor = System.Drawing.Color.White;
             this.DOCtaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DOCtaper.Location = new System.Drawing.Point(791, 636);
+            this.DOCtaper.Location = new System.Drawing.Point(831, 636);
             this.DOCtaper.MaxLength = 8;
             this.DOCtaper.Name = "DOCtaper";
             this.DOCtaper.Size = new System.Drawing.Size(102, 31);
@@ -2385,13 +2914,13 @@ namespace Rummage_CNC
             // RPM
             // 
             this.RPM.BackColor = System.Drawing.Color.White;
-            this.RPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RPM.ForeColor = System.Drawing.Color.Red;
-            this.RPM.Location = new System.Drawing.Point(14, 796);
+            this.RPM.Location = new System.Drawing.Point(541, 275);
             this.RPM.MaxLength = 8;
             this.RPM.Name = "RPM";
             this.RPM.ReadOnly = true;
-            this.RPM.Size = new System.Drawing.Size(313, 116);
+            this.RPM.Size = new System.Drawing.Size(125, 44);
             this.RPM.TabIndex = 0;
             this.RPM.Text = "0";
             this.RPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -2402,7 +2931,7 @@ namespace Rummage_CNC
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.Lime;
-            this.label38.Location = new System.Drawing.Point(127, 760);
+            this.label38.Location = new System.Drawing.Point(562, 238);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 33);
             this.label38.TabIndex = 0;
@@ -2411,9 +2940,10 @@ namespace Rummage_CNC
             // label37
             // 
             this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Aqua;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.Lime;
-            this.label37.Location = new System.Drawing.Point(544, 533);
+            this.label37.ForeColor = System.Drawing.Color.Black;
+            this.label37.Location = new System.Drawing.Point(989, 533);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(84, 20);
             this.label37.TabIndex = 0;
@@ -2422,9 +2952,10 @@ namespace Rummage_CNC
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.Aqua;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.Lime;
-            this.label36.Location = new System.Drawing.Point(398, 533);
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(140, 655);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(98, 20);
             this.label36.TabIndex = 0;
@@ -2438,7 +2969,7 @@ namespace Rummage_CNC
             this.CycleRadius.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CycleRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CycleRadius.ForeColor = System.Drawing.Color.Black;
-            this.CycleRadius.Location = new System.Drawing.Point(395, 920);
+            this.CycleRadius.Location = new System.Drawing.Point(152, 920);
             this.CycleRadius.Name = "CycleRadius";
             this.CycleRadius.Size = new System.Drawing.Size(102, 31);
             this.CycleRadius.TabIndex = 72;
@@ -2451,31 +2982,18 @@ namespace Rummage_CNC
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Lime;
-            this.label35.Location = new System.Drawing.Point(404, 617);
+            this.label35.Location = new System.Drawing.Point(23, 731);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(83, 16);
             this.label35.TabIndex = 0;
             this.label35.Text = "Degree Inc";
-            // 
-            // DegreeInc
-            // 
-            this.DegreeInc.BackColor = System.Drawing.Color.White;
-            this.DegreeInc.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DegreeInc.Location = new System.Drawing.Point(395, 636);
-            this.DegreeInc.MaxLength = 5;
-            this.DegreeInc.Name = "DegreeInc";
-            this.DegreeInc.Size = new System.Drawing.Size(102, 31);
-            this.DegreeInc.TabIndex = 66;
-            this.DegreeInc.Text = "1";
-            this.DegreeInc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DegreeInc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.Lime;
-            this.label34.Location = new System.Drawing.Point(419, 560);
+            this.label34.Location = new System.Drawing.Point(38, 676);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(56, 16);
             this.label34.TabIndex = 0;
@@ -2485,7 +3003,7 @@ namespace Rummage_CNC
             // 
             this.CircleRadius.BackColor = System.Drawing.Color.White;
             this.CircleRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CircleRadius.Location = new System.Drawing.Point(395, 581);
+            this.CircleRadius.Location = new System.Drawing.Point(14, 695);
             this.CircleRadius.MaxLength = 8;
             this.CircleRadius.Name = "CircleRadius";
             this.CircleRadius.Size = new System.Drawing.Size(102, 31);
@@ -2500,7 +3018,7 @@ namespace Rummage_CNC
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(917, 65);
+            this.label3.Location = new System.Drawing.Point(933, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 24);
             this.label3.TabIndex = 0;
@@ -2510,7 +3028,7 @@ namespace Rummage_CNC
             // 
             this.manualIPM.BackColor = System.Drawing.Color.White;
             this.manualIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manualIPM.Location = new System.Drawing.Point(913, 92);
+            this.manualIPM.Location = new System.Drawing.Point(929, 92);
             this.manualIPM.MaxLength = 8;
             this.manualIPM.Name = "manualIPM";
             this.manualIPM.Size = new System.Drawing.Size(54, 35);
@@ -2544,12 +3062,13 @@ namespace Rummage_CNC
             this.manualXn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualXn.ForeColor = System.Drawing.Color.Black;
             this.manualXn.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Left_Icon_64;
-            this.manualXn.Location = new System.Drawing.Point(698, 78);
+            this.manualXn.Location = new System.Drawing.Point(711, 78);
             this.manualXn.Name = "manualXn";
             this.manualXn.Size = new System.Drawing.Size(65, 65);
             this.manualXn.TabIndex = 17;
             this.manualXn.Text = "-X";
             this.manualXn.UseVisualStyleBackColor = false;
+            this.manualXn.Click += new System.EventHandler(this.manualXn_Click);
             this.manualXn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.manualMoves_MouseDown);
             this.manualXn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.manualMoves_MouseUp);
             // 
@@ -2563,7 +3082,7 @@ namespace Rummage_CNC
             this.manualXp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualXp.ForeColor = System.Drawing.Color.Black;
             this.manualXp.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Right_Icon_64;
-            this.manualXp.Location = new System.Drawing.Point(828, 78);
+            this.manualXp.Location = new System.Drawing.Point(841, 78);
             this.manualXp.Name = "manualXp";
             this.manualXp.Size = new System.Drawing.Size(65, 65);
             this.manualXp.TabIndex = 18;
@@ -2582,7 +3101,7 @@ namespace Rummage_CNC
             this.manualYp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualYp.ForeColor = System.Drawing.Color.Black;
             this.manualYp.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Down_Icon_64;
-            this.manualYp.Location = new System.Drawing.Point(763, 143);
+            this.manualYp.Location = new System.Drawing.Point(776, 143);
             this.manualYp.Name = "manualYp";
             this.manualYp.Size = new System.Drawing.Size(65, 65);
             this.manualYp.TabIndex = 20;
@@ -2602,7 +3121,7 @@ namespace Rummage_CNC
             this.manualYn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manualYn.ForeColor = System.Drawing.Color.Black;
             this.manualYn.Image = global::Rummage_CNC.Properties.Resources.Alarm_Arrow_Up_Icon_64;
-            this.manualYn.Location = new System.Drawing.Point(763, 13);
+            this.manualYn.Location = new System.Drawing.Point(776, 13);
             this.manualYn.Name = "manualYn";
             this.manualYn.Size = new System.Drawing.Size(65, 65);
             this.manualYn.TabIndex = 19;
@@ -2629,7 +3148,7 @@ namespace Rummage_CNC
             this.homeY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeY.ForeColor = System.Drawing.Color.Cyan;
-            this.homeY.Location = new System.Drawing.Point(394, 83);
+            this.homeY.Location = new System.Drawing.Point(414, 83);
             this.homeY.Name = "homeY";
             this.homeY.Size = new System.Drawing.Size(89, 31);
             this.homeY.TabIndex = 8;
@@ -2644,7 +3163,7 @@ namespace Rummage_CNC
             this.homeX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeX.ForeColor = System.Drawing.Color.Cyan;
-            this.homeX.Location = new System.Drawing.Point(394, 39);
+            this.homeX.Location = new System.Drawing.Point(414, 39);
             this.homeX.Name = "homeX";
             this.homeX.Size = new System.Drawing.Size(89, 31);
             this.homeX.TabIndex = 5;
@@ -2652,36 +3171,12 @@ namespace Rummage_CNC
             this.homeX.UseVisualStyleBackColor = false;
             this.homeX.Click += new System.EventHandler(this.homes_Click);
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Lime;
-            this.label32.Location = new System.Drawing.Point(798, 674);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(88, 16);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "To Remove";
-            // 
-            // ToRemove
-            // 
-            this.ToRemove.BackColor = System.Drawing.Color.White;
-            this.ToRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToRemove.Location = new System.Drawing.Point(791, 695);
-            this.ToRemove.MaxLength = 8;
-            this.ToRemove.Name = "ToRemove";
-            this.ToRemove.Size = new System.Drawing.Size(102, 31);
-            this.ToRemove.TabIndex = 85;
-            this.ToRemove.Text = "0.005";
-            this.ToRemove.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ToRemove.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Lime;
-            this.label31.Location = new System.Drawing.Point(680, 734);
+            this.label31.Location = new System.Drawing.Point(720, 734);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(89, 16);
             this.label31.TabIndex = 0;
@@ -2694,7 +3189,7 @@ namespace Rummage_CNC
             this.Slope.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Slope.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Slope.ForeColor = System.Drawing.Color.Cyan;
-            this.Slope.Location = new System.Drawing.Point(675, 755);
+            this.Slope.Location = new System.Drawing.Point(715, 755);
             this.Slope.Name = "Slope";
             this.Slope.Size = new System.Drawing.Size(102, 31);
             this.Slope.TabIndex = 82;
@@ -2707,7 +3202,7 @@ namespace Rummage_CNC
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Lime;
-            this.label30.Location = new System.Drawing.Point(683, 561);
+            this.label30.Location = new System.Drawing.Point(723, 561);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(86, 16);
             this.label30.TabIndex = 0;
@@ -2721,7 +3216,7 @@ namespace Rummage_CNC
             this.CycleTaper.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CycleTaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CycleTaper.ForeColor = System.Drawing.Color.Black;
-            this.CycleTaper.Location = new System.Drawing.Point(737, 920);
+            this.CycleTaper.Location = new System.Drawing.Point(776, 920);
             this.CycleTaper.Name = "CycleTaper";
             this.CycleTaper.Size = new System.Drawing.Size(102, 31);
             this.CycleTaper.TabIndex = 86;
@@ -2734,11 +3229,11 @@ namespace Rummage_CNC
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.Lime;
-            this.label29.Location = new System.Drawing.Point(686, 674);
+            this.label29.Location = new System.Drawing.Point(725, 674);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(77, 16);
+            this.label29.Size = new System.Drawing.Size(83, 16);
             this.label29.TabIndex = 0;
-            this.label29.Text = "Long Side";
+            this.label29.Text = "Long Move";
             // 
             // LongAxis
             // 
@@ -2748,7 +3243,7 @@ namespace Rummage_CNC
             this.LongAxis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LongAxis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LongAxis.ForeColor = System.Drawing.Color.Cyan;
-            this.LongAxis.Location = new System.Drawing.Point(675, 695);
+            this.LongAxis.Location = new System.Drawing.Point(715, 695);
             this.LongAxis.Name = "LongAxis";
             this.LongAxis.Size = new System.Drawing.Size(102, 31);
             this.LongAxis.TabIndex = 81;
@@ -2759,9 +3254,10 @@ namespace Rummage_CNC
             // label28
             // 
             this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Aqua;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Lime;
-            this.label28.Location = new System.Drawing.Point(736, 530);
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(781, 533);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(88, 20);
             this.label28.TabIndex = 0;
@@ -2771,12 +3267,12 @@ namespace Rummage_CNC
             // 
             this.TaperLength.BackColor = System.Drawing.Color.White;
             this.TaperLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaperLength.Location = new System.Drawing.Point(675, 636);
+            this.TaperLength.Location = new System.Drawing.Point(715, 636);
             this.TaperLength.MaxLength = 8;
             this.TaperLength.Name = "TaperLength";
             this.TaperLength.Size = new System.Drawing.Size(102, 31);
             this.TaperLength.TabIndex = 80;
-            this.TaperLength.Text = "0.5";
+            this.TaperLength.Text = "3.75";
             this.TaperLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TaperLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
@@ -2785,7 +3281,7 @@ namespace Rummage_CNC
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Lime;
-            this.label27.Location = new System.Drawing.Point(680, 616);
+            this.label27.Location = new System.Drawing.Point(720, 616);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(91, 16);
             this.label27.TabIndex = 0;
@@ -2795,12 +3291,12 @@ namespace Rummage_CNC
             // 
             this.Ratio.BackColor = System.Drawing.Color.White;
             this.Ratio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ratio.Location = new System.Drawing.Point(675, 581);
+            this.Ratio.Location = new System.Drawing.Point(715, 581);
             this.Ratio.MaxLength = 8;
             this.Ratio.Name = "Ratio";
             this.Ratio.Size = new System.Drawing.Size(102, 31);
             this.Ratio.TabIndex = 79;
-            this.Ratio.Text = "20";
+            this.Ratio.Text = "2.5";
             this.Ratio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Ratio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
@@ -2872,25 +3368,13 @@ namespace Rummage_CNC
             // 
             this.ThreadRPM.BackColor = System.Drawing.Color.White;
             this.ThreadRPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThreadRPM.Location = new System.Drawing.Point(407, 291);
+            this.ThreadRPM.Location = new System.Drawing.Point(406, 289);
             this.ThreadRPM.Name = "ThreadRPM";
             this.ThreadRPM.Size = new System.Drawing.Size(81, 31);
             this.ThreadRPM.TabIndex = 61;
             this.ThreadRPM.Text = "200";
             this.ThreadRPM.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ThreadRPM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
-            // 
-            // ThreadPI
-            // 
-            this.ThreadPI.BackColor = System.Drawing.Color.White;
-            this.ThreadPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThreadPI.Location = new System.Drawing.Point(407, 346);
-            this.ThreadPI.Name = "ThreadPI";
-            this.ThreadPI.Size = new System.Drawing.Size(81, 31);
-            this.ThreadPI.TabIndex = 62;
-            this.ThreadPI.Text = "10";
-            this.ThreadPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ThreadPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // CycleCount
             // 
@@ -2909,7 +3393,7 @@ namespace Rummage_CNC
             this.YnegTB.BackColor = System.Drawing.Color.White;
             this.YnegTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YnegTB.ForeColor = System.Drawing.Color.Black;
-            this.YnegTB.Location = new System.Drawing.Point(14, 345);
+            this.YnegTB.Location = new System.Drawing.Point(14, 339);
             this.YnegTB.MaxLength = 6;
             this.YnegTB.Name = "YnegTB";
             this.YnegTB.Size = new System.Drawing.Size(102, 31);
@@ -2923,7 +3407,7 @@ namespace Rummage_CNC
             this.YposTB.BackColor = System.Drawing.Color.White;
             this.YposTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YposTB.ForeColor = System.Drawing.Color.Black;
-            this.YposTB.Location = new System.Drawing.Point(14, 382);
+            this.YposTB.Location = new System.Drawing.Point(14, 376);
             this.YposTB.MaxLength = 6;
             this.YposTB.Name = "YposTB";
             this.YposTB.Size = new System.Drawing.Size(102, 31);
@@ -2937,7 +3421,7 @@ namespace Rummage_CNC
             this.XposTB.BackColor = System.Drawing.Color.White;
             this.XposTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XposTB.ForeColor = System.Drawing.Color.Black;
-            this.XposTB.Location = new System.Drawing.Point(14, 293);
+            this.XposTB.Location = new System.Drawing.Point(14, 287);
             this.XposTB.MaxLength = 6;
             this.XposTB.Name = "XposTB";
             this.XposTB.Size = new System.Drawing.Size(102, 31);
@@ -2951,7 +3435,7 @@ namespace Rummage_CNC
             this.XnegTB.BackColor = System.Drawing.Color.White;
             this.XnegTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XnegTB.ForeColor = System.Drawing.Color.Black;
-            this.XnegTB.Location = new System.Drawing.Point(14, 256);
+            this.XnegTB.Location = new System.Drawing.Point(14, 250);
             this.XnegTB.MaxLength = 6;
             this.XnegTB.Name = "XnegTB";
             this.XnegTB.Size = new System.Drawing.Size(102, 31);
@@ -2965,7 +3449,7 @@ namespace Rummage_CNC
             this.MetricY.BackColor = System.Drawing.Color.White;
             this.MetricY.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricY.ForeColor = System.Drawing.Color.Black;
-            this.MetricY.Location = new System.Drawing.Point(100, 83);
+            this.MetricY.Location = new System.Drawing.Point(120, 83);
             this.MetricY.Name = "MetricY";
             this.MetricY.ReadOnly = true;
             this.MetricY.Size = new System.Drawing.Size(118, 31);
@@ -2978,7 +3462,7 @@ namespace Rummage_CNC
             this.MetricX.BackColor = System.Drawing.Color.White;
             this.MetricX.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetricX.ForeColor = System.Drawing.Color.Black;
-            this.MetricX.Location = new System.Drawing.Point(100, 39);
+            this.MetricX.Location = new System.Drawing.Point(120, 39);
             this.MetricX.Name = "MetricX";
             this.MetricX.ReadOnly = true;
             this.MetricX.Size = new System.Drawing.Size(118, 31);
@@ -2991,7 +3475,7 @@ namespace Rummage_CNC
             this.inchx.BackColor = System.Drawing.Color.White;
             this.inchx.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inchx.ForeColor = System.Drawing.Color.Black;
-            this.inchx.Location = new System.Drawing.Point(263, 39);
+            this.inchx.Location = new System.Drawing.Point(283, 39);
             this.inchx.Name = "inchx";
             this.inchx.ReadOnly = true;
             this.inchx.Size = new System.Drawing.Size(118, 31);
@@ -3005,7 +3489,7 @@ namespace Rummage_CNC
             this.inchy.BackColor = System.Drawing.Color.White;
             this.inchy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inchy.ForeColor = System.Drawing.Color.Black;
-            this.inchy.Location = new System.Drawing.Point(263, 83);
+            this.inchy.Location = new System.Drawing.Point(283, 83);
             this.inchy.Name = "inchy";
             this.inchy.ReadOnly = true;
             this.inchy.Size = new System.Drawing.Size(118, 31);
@@ -3052,7 +3536,7 @@ namespace Rummage_CNC
             this.DoubleY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoubleY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoubleY.ForeColor = System.Drawing.Color.Cyan;
-            this.DoubleY.Location = new System.Drawing.Point(573, 83);
+            this.DoubleY.Location = new System.Drawing.Point(593, 83);
             this.DoubleY.Name = "DoubleY";
             this.DoubleY.Size = new System.Drawing.Size(58, 31);
             this.DoubleY.TabIndex = 10;
@@ -3067,7 +3551,7 @@ namespace Rummage_CNC
             this.DoubleX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DoubleX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DoubleX.ForeColor = System.Drawing.Color.Cyan;
-            this.DoubleX.Location = new System.Drawing.Point(573, 38);
+            this.DoubleX.Location = new System.Drawing.Point(593, 38);
             this.DoubleX.Name = "DoubleX";
             this.DoubleX.Size = new System.Drawing.Size(58, 31);
             this.DoubleX.TabIndex = 7;
@@ -3079,7 +3563,7 @@ namespace Rummage_CNC
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label19.Location = new System.Drawing.Point(399, 231);
+            this.label19.Location = new System.Drawing.Point(399, 902);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 13);
             this.label19.TabIndex = 0;
@@ -3091,7 +3575,7 @@ namespace Rummage_CNC
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Lime;
-            this.label26.Location = new System.Drawing.Point(400, 384);
+            this.label26.Location = new System.Drawing.Point(399, 324);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(97, 16);
             this.label26.TabIndex = 0;
@@ -3104,7 +3588,7 @@ namespace Rummage_CNC
             this.ThreadType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThreadType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThreadType.ForeColor = System.Drawing.Color.Green;
-            this.ThreadType.Location = new System.Drawing.Point(407, 405);
+            this.ThreadType.Location = new System.Drawing.Point(406, 344);
             this.ThreadType.Name = "ThreadType";
             this.ThreadType.Size = new System.Drawing.Size(81, 31);
             this.ThreadType.TabIndex = 63;
@@ -3129,22 +3613,11 @@ namespace Rummage_CNC
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.Lime;
-            this.label23.Location = new System.Drawing.Point(407, 271);
+            this.label23.Location = new System.Drawing.Point(406, 269);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(82, 16);
             this.label23.TabIndex = 0;
             this.label23.Text = "Lathe RPM";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Lime;
-            this.label22.Location = new System.Drawing.Point(433, 327);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 16);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "TPI";
             // 
             // ThreadCycle
             // 
@@ -3154,11 +3627,11 @@ namespace Rummage_CNC
             this.ThreadCycle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ThreadCycle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThreadCycle.ForeColor = System.Drawing.Color.Black;
-            this.ThreadCycle.Location = new System.Drawing.Point(407, 470);
+            this.ThreadCycle.Location = new System.Drawing.Point(402, 920);
             this.ThreadCycle.Name = "ThreadCycle";
-            this.ThreadCycle.Size = new System.Drawing.Size(81, 31);
+            this.ThreadCycle.Size = new System.Drawing.Size(92, 31);
             this.ThreadCycle.TabIndex = 64;
-            this.ThreadCycle.Text = "Cycle";
+            this.ThreadCycle.Text = "Export";
             this.ThreadCycle.UseVisualStyleBackColor = false;
             this.ThreadCycle.Click += new System.EventHandler(this.button25_Click);
             // 
@@ -3170,7 +3643,7 @@ namespace Rummage_CNC
             this.Cycle4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cycle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cycle4.ForeColor = System.Drawing.Color.Black;
-            this.Cycle4.Location = new System.Drawing.Point(122, 609);
+            this.Cycle4.Location = new System.Drawing.Point(122, 603);
             this.Cycle4.Name = "Cycle4";
             this.Cycle4.Size = new System.Drawing.Size(163, 31);
             this.Cycle4.TabIndex = 59;
@@ -3186,7 +3659,7 @@ namespace Rummage_CNC
             this.YnegIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YnegIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YnegIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.YnegIPM.Location = new System.Drawing.Point(195, 345);
+            this.YnegIPM.Location = new System.Drawing.Point(195, 339);
             this.YnegIPM.Name = "YnegIPM";
             this.YnegIPM.Size = new System.Drawing.Size(90, 31);
             this.YnegIPM.TabIndex = 36;
@@ -3201,7 +3674,7 @@ namespace Rummage_CNC
             this.YposIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YposIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YposIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.YposIPM.Location = new System.Drawing.Point(195, 382);
+            this.YposIPM.Location = new System.Drawing.Point(195, 376);
             this.YposIPM.Name = "YposIPM";
             this.YposIPM.Size = new System.Drawing.Size(90, 31);
             this.YposIPM.TabIndex = 40;
@@ -3216,7 +3689,7 @@ namespace Rummage_CNC
             this.YnegMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YnegMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YnegMove.ForeColor = System.Drawing.Color.Cyan;
-            this.YnegMove.Location = new System.Drawing.Point(122, 345);
+            this.YnegMove.Location = new System.Drawing.Point(122, 339);
             this.YnegMove.Name = "YnegMove";
             this.YnegMove.Size = new System.Drawing.Size(67, 31);
             this.YnegMove.TabIndex = 34;
@@ -3231,7 +3704,7 @@ namespace Rummage_CNC
             this.YposMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.YposMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.YposMove.ForeColor = System.Drawing.Color.Cyan;
-            this.YposMove.Location = new System.Drawing.Point(122, 382);
+            this.YposMove.Location = new System.Drawing.Point(122, 376);
             this.YposMove.Name = "YposMove";
             this.YposMove.Size = new System.Drawing.Size(67, 31);
             this.YposMove.TabIndex = 39;
@@ -3246,7 +3719,7 @@ namespace Rummage_CNC
             this.XposIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XposIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XposIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.XposIPM.Location = new System.Drawing.Point(195, 293);
+            this.XposIPM.Location = new System.Drawing.Point(195, 287);
             this.XposIPM.Name = "XposIPM";
             this.XposIPM.Size = new System.Drawing.Size(90, 31);
             this.XposIPM.TabIndex = 32;
@@ -3259,11 +3732,11 @@ namespace Rummage_CNC
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Lime;
-            this.label18.Location = new System.Drawing.Point(207, 241);
+            this.label18.Location = new System.Drawing.Point(212, 235);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 13);
+            this.label18.Size = new System.Drawing.Size(52, 13);
             this.label18.TabIndex = 0;
-            this.label18.Text = "Cut speed";
+            this.label18.Text = "Cut IPM";
             // 
             // XnegIPM
             // 
@@ -3272,7 +3745,7 @@ namespace Rummage_CNC
             this.XnegIPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XnegIPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XnegIPM.ForeColor = System.Drawing.Color.Cyan;
-            this.XnegIPM.Location = new System.Drawing.Point(195, 256);
+            this.XnegIPM.Location = new System.Drawing.Point(195, 250);
             this.XnegIPM.Name = "XnegIPM";
             this.XnegIPM.Size = new System.Drawing.Size(90, 31);
             this.XnegIPM.TabIndex = 28;
@@ -3287,7 +3760,7 @@ namespace Rummage_CNC
             this.XposMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XposMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XposMove.ForeColor = System.Drawing.Color.Cyan;
-            this.XposMove.Location = new System.Drawing.Point(122, 293);
+            this.XposMove.Location = new System.Drawing.Point(122, 287);
             this.XposMove.Name = "XposMove";
             this.XposMove.Size = new System.Drawing.Size(67, 31);
             this.XposMove.TabIndex = 31;
@@ -3302,7 +3775,7 @@ namespace Rummage_CNC
             this.XnegMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XnegMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.XnegMove.ForeColor = System.Drawing.Color.Cyan;
-            this.XnegMove.Location = new System.Drawing.Point(122, 256);
+            this.XnegMove.Location = new System.Drawing.Point(122, 250);
             this.XnegMove.Name = "XnegMove";
             this.XnegMove.Size = new System.Drawing.Size(67, 31);
             this.XnegMove.TabIndex = 27;
@@ -3315,7 +3788,7 @@ namespace Rummage_CNC
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Lime;
-            this.label17.Location = new System.Drawing.Point(122, 11);
+            this.label17.Location = new System.Drawing.Point(142, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 25);
             this.label17.TabIndex = 0;
@@ -3326,7 +3799,7 @@ namespace Rummage_CNC
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Lime;
-            this.label16.Location = new System.Drawing.Point(297, 11);
+            this.label16.Location = new System.Drawing.Point(317, 11);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(56, 25);
             this.label16.TabIndex = 0;
@@ -3339,7 +3812,7 @@ namespace Rummage_CNC
             this.HalfY.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HalfY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HalfY.ForeColor = System.Drawing.Color.Cyan;
-            this.HalfY.Location = new System.Drawing.Point(501, 83);
+            this.HalfY.Location = new System.Drawing.Point(521, 83);
             this.HalfY.Name = "HalfY";
             this.HalfY.Size = new System.Drawing.Size(58, 31);
             this.HalfY.TabIndex = 9;
@@ -3354,7 +3827,7 @@ namespace Rummage_CNC
             this.HalfX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HalfX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HalfX.ForeColor = System.Drawing.Color.Cyan;
-            this.HalfX.Location = new System.Drawing.Point(501, 38);
+            this.HalfX.Location = new System.Drawing.Point(521, 38);
             this.HalfX.Name = "HalfX";
             this.HalfX.Size = new System.Drawing.Size(58, 31);
             this.HalfX.TabIndex = 6;
@@ -3371,7 +3844,7 @@ namespace Rummage_CNC
             this.zeroX.ForeColor = System.Drawing.Color.Black;
             this.zeroX.Location = new System.Drawing.Point(14, 39);
             this.zeroX.Name = "zeroX";
-            this.zeroX.Size = new System.Drawing.Size(71, 31);
+            this.zeroX.Size = new System.Drawing.Size(100, 31);
             this.zeroX.TabIndex = 1;
             this.zeroX.Text = "Clear";
             this.zeroX.UseVisualStyleBackColor = false;
@@ -3384,7 +3857,7 @@ namespace Rummage_CNC
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
-            this.label1.Location = new System.Drawing.Point(227, 41);
+            this.label1.Location = new System.Drawing.Point(247, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 25);
             this.label1.TabIndex = 0;
@@ -3397,7 +3870,7 @@ namespace Rummage_CNC
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(226, 85);
+            this.label2.Location = new System.Drawing.Point(246, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 25);
             this.label2.TabIndex = 0;
@@ -3412,7 +3885,7 @@ namespace Rummage_CNC
             this.zeroY.ForeColor = System.Drawing.Color.Black;
             this.zeroY.Location = new System.Drawing.Point(14, 83);
             this.zeroY.Name = "zeroY";
-            this.zeroY.Size = new System.Drawing.Size(71, 31);
+            this.zeroY.Size = new System.Drawing.Size(100, 31);
             this.zeroY.TabIndex = 2;
             this.zeroY.Text = "Clear";
             this.zeroY.UseVisualStyleBackColor = false;
@@ -3430,28 +3903,6 @@ namespace Rummage_CNC
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1905, 1000);
             this.tabControl1.TabIndex = 0;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.Lime;
-            this.label67.Location = new System.Drawing.Point(1314, 736);
-            this.label67.Name = "label67";
-            this.label67.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label67.Size = new System.Drawing.Size(71, 13);
-            this.label67.TabIndex = 160;
-            this.label67.Text = "Run Cycles";
-            // 
-            // CodeRunning
-            // 
-            this.CodeRunning.AutoSize = true;
-            this.CodeRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CodeRunning.ForeColor = System.Drawing.Color.Red;
-            this.CodeRunning.Location = new System.Drawing.Point(1416, 13);
-            this.CodeRunning.Name = "CodeRunning";
-            this.CodeRunning.Size = new System.Drawing.Size(0, 25);
-            this.CodeRunning.TabIndex = 161;
             // 
             // Form1
             // 
@@ -3517,7 +3968,6 @@ namespace Rummage_CNC
         public System.Windows.Forms.RichTextBox RGcodeRTB;
         public System.Windows.Forms.TextBox CurrentCycle;
         public System.Windows.Forms.TextBox ThreadRPM;
-        public System.Windows.Forms.TextBox ThreadPI;
         public System.Windows.Forms.TextBox CycleCount;
         public System.Windows.Forms.TextBox YnegTB;
         public System.Windows.Forms.TextBox YposTB;
@@ -3540,7 +3990,6 @@ namespace Rummage_CNC
         public System.Windows.Forms.Button XposOrder;
         public System.Windows.Forms.Button XnegOrder;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
         public System.Windows.Forms.Button ThreadCycle;
         public System.Windows.Forms.Button Cycle4;
         public System.Windows.Forms.Button YnegIPM;
@@ -3572,8 +4021,6 @@ namespace Rummage_CNC
         public System.Windows.Forms.TextBox Ratio;
         public System.Windows.Forms.Button Slope;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        public System.Windows.Forms.TextBox ToRemove;
         public System.Windows.Forms.Button homeY;
         public System.Windows.Forms.Button homeX;
         public System.Windows.Forms.Label label33;
@@ -3590,12 +4037,9 @@ namespace Rummage_CNC
         private System.Windows.Forms.Label label35;
         public System.Windows.Forms.TextBox DegreeInc;
         private System.Windows.Forms.Label label36;
-        public System.Windows.Forms.Button ExportCode;
         private System.Windows.Forms.Label label37;
         public System.Windows.Forms.TextBox RPM;
         public System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        public System.Windows.Forms.TextBox DOCtaper;
         private System.Windows.Forms.Label label40;
         public System.Windows.Forms.TextBox IPMtaper;
         private System.Windows.Forms.Label label43;
@@ -3680,7 +4124,6 @@ namespace Rummage_CNC
         private System.Windows.Forms.Label label62;
         public System.Windows.Forms.TextBox MetricTPI;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label61;
         public System.Windows.Forms.Button DrillRapid;
         public System.Windows.Forms.Button ToolSet;
@@ -3703,6 +4146,43 @@ namespace Rummage_CNC
         public System.Windows.Forms.RichTextBox RepeatBox;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label CodeRunning;
+        private System.Windows.Forms.Label label68;
+        public System.Windows.Forms.TextBox ReturnIPMTaper;
+        private System.Windows.Forms.Label label69;
+        public System.Windows.Forms.TextBox TaperPullBack;
+        private System.Windows.Forms.Label label70;
+        public System.Windows.Forms.TextBox RadiusIPMReturn;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label39;
+        public System.Windows.Forms.TextBox DOCtaper;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label73;
+        public System.Windows.Forms.TextBox ThreadLength;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        public System.Windows.Forms.TextBox ThreadRetractLength;
+        private System.Windows.Forms.Label label78;
+        public System.Windows.Forms.Button ThreadRetractIPM;
+        private System.Windows.Forms.Label label79;
+        public System.Windows.Forms.TextBox ThreadDOC;
+        public System.Windows.Forms.TextBox ThreadDepth;
+        private System.Windows.Forms.Label label82;
+        public System.Windows.Forms.CheckBox DOCTableCheck;
+        public System.Windows.Forms.RichTextBox DOCRTB;
+        private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.Button ThreadDirection;
+        private System.Windows.Forms.Label label32;
+        public System.Windows.Forms.Button ShortAxis;
+        public System.Windows.Forms.CheckBox TaperIsRadius;
+        public System.Windows.Forms.Button ThreadRetractAxisBT;
+        public System.Windows.Forms.Button ThreadAxisBT;
+        public System.Windows.Forms.Button ShortFeedAxisBT;
+        public System.Windows.Forms.Button LongFeedAxisBT;
+        public System.Windows.Forms.Button ToolSetAxis1;
+        private System.Windows.Forms.Label label64;
+        public System.Windows.Forms.Button ToolDir;
+        private System.Windows.Forms.Label label77;
     }
 }
 

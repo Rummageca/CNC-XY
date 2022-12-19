@@ -34,9 +34,15 @@ namespace Rummage_CNC
             double LashZ = Convert.ToDouble(Form1.self.BacklashZ.Text);
             double LashA = Convert.ToDouble(Form1.self.BacklashA.Text);
 
+            string CutAxis1 = Form1.self.LongFeedAxisBT.Text;
+            string CutAxis2 = Form1.self.ShortFeedAxisBT.Text;
+            string ThreadAxis1 = Form1.self.ThreadAxisBT.Text;
+            string ThreadAxis2 = Form1.self.ThreadRetractAxisBT.Text;
+
 
             Form1.self.richTextBox2.Text += (xa + "\r" + ya + "\r" + za + "\r" + aa + "\r" + Conv + "\r" + baud + "\r" + com + "\r" + par + "\r" + wbuff + "\r" +
-                                  rbuff + "\r" + sbits + "\r" + databits + "\r" + hshake + "\r" + LashX + "\r" + LashY + "\r" + LashZ + "\r" + LashA + "\r");
+                                  rbuff + "\r" + sbits + "\r" + databits + "\r" + hshake + "\r" + LashX + "\r" + LashY + "\r" + LashZ + "\r" + LashA + "\r"
+                                  + CutAxis1 + "\r" + CutAxis2 + "\r" + ThreadAxis1 + "\r" + ThreadAxis2 + "\r");
 
             SaveFileDialog SaveFile = new SaveFileDialog();
 
@@ -59,7 +65,7 @@ namespace Rummage_CNC
             {
                 StreamReader txt = new StreamReader(@"c:\dro\settings.cfg");
 
-                int NumberOfLines = 18;//-----------------------------How many lines should be loaded?---------------------------            
+                int NumberOfLines = 22;//-----------------------------How many lines should be loaded?---------------------------            
                 string[] ListLines = new string[NumberOfLines];//------Make our array for each line------------------------------            
 
                 if (ListLines[1] != " ")
@@ -101,6 +107,11 @@ namespace Rummage_CNC
                     Form1.self.BacklashY.Text = ListLines[15];
                     Form1.self.BacklashZ.Text = ListLines[16];
                     Form1.self.BacklashA.Text = ListLines[17];
+
+                    Form1.self.LongFeedAxisBT.Text = ListLines[18];
+                    Form1.self.ShortFeedAxisBT.Text = ListLines[19];
+                    Form1.self.ThreadAxisBT.Text = ListLines[20];
+                    Form1.self.ThreadRetractAxisBT.Text = ListLines[21];
 
                     Form1.self.DiagnosticsRTB.Text += "Loaded Saved Settings" + Environment.NewLine;
 

@@ -123,7 +123,7 @@ namespace Rummage_CNC
 
                 while (Form1.self.buttonEnabled.Text == "1")
                 {
-                    Task.Delay(5).Wait();
+                    Task.Delay(Form1.self.Dtime).Wait();
                 }
 
             }
@@ -179,7 +179,7 @@ namespace Rummage_CNC
 
                     while (Form1.self.buttonEnabled.Text == "1")
                     {
-                        Task.Delay(5).Wait();
+                        Task.Delay(Form1.self.Dtime).Wait();
                     }
 
                 }
@@ -221,7 +221,7 @@ namespace Rummage_CNC
 
                     while (Form1.self.buttonEnabled.Text == "1")
                     {
-                        Task.Delay(5).Wait();
+                        Task.Delay(Form1.self.Dtime).Wait();
                     }
                 }
 
@@ -262,7 +262,7 @@ namespace Rummage_CNC
 
                     while (Form1.self.buttonEnabled.Text == "1")
                     {
-                        Task.Delay(5).Wait();
+                        Task.Delay(Form1.self.Dtime).Wait();
                     }
                 }
             }
@@ -301,7 +301,7 @@ namespace Rummage_CNC
 
                     while (Form1.self.buttonEnabled.Text == "1")
                     {
-                        Task.Delay(5).Wait();
+                        Task.Delay(Form1.self.Dtime).Wait();
                     }
 
                 }
@@ -318,6 +318,7 @@ namespace Rummage_CNC
             string rotation = "";
             double manualIPM = Convert.ToDouble(Form1.self.manualIPM.Text);
 
+               
 
             if (sender as Button == Form1.self.manualXn) { rotation = "cw" + "x"; Form1.self.manualXn.Enabled = true; }
             if (sender as Button == Form1.self.manualXp) { rotation = "ccw" + "x"; Form1.self.manualXp.Enabled = true; }
@@ -344,7 +345,7 @@ namespace Rummage_CNC
 
                 while (Form1.self.buttonEnabled.Text == "1")
                 {
-                    Task.Delay(5).Wait();
+                    Task.Delay(Form1.self.Dtime).Wait();
                 }
 
             }

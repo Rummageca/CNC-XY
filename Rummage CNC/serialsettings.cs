@@ -27,14 +27,17 @@ namespace Rummage_CNC
 
             switch (lines[0])
             {
-                case "N1":
-                    Form1.self.buttonEnabled.Text = "0";
-                    break;
                 case "X":
                     XReceived();
                     break;
+                case "X0":
+                    ZeroX();
+                    break;
                 case "Y":
                     YReceived();
+                    break;
+                case "Y0":
+                    ZeroY();
                     break;
                 case "Z":
                     ZReceived();
@@ -45,14 +48,22 @@ namespace Rummage_CNC
                 case "A":
                     AReceived();
                     break;
+                case "A0":
+                    ZeroA();
+                    break;
                 case "Thd":
                     THDReceived();
+                    break;
+                case "Estop":
+                    EStopped();
                     break;
                 default:
 
                     break;
-            }
-        }
+            }                       
+
+           }
+
         private void XReceived()
         {
             double toNum = Convert.ToDouble(lines[1]);
@@ -62,7 +73,9 @@ namespace Rummage_CNC
             double conv = (toNum * puls) * stepconverstion;
             double oldvalue = Convert.ToDouble(Form1.self.inchx.Text);
             double finished = oldvalue + conv;
-            Form1.self.inchx.Text = Convert.ToString(String.Format("{0:0.0000}", finished));           
+            Form1.self.inchx.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
+
+            Form1.self.buttonEnabled.Text = "0";
         }
         private void YReceived()
         {
@@ -74,6 +87,8 @@ namespace Rummage_CNC
             double oldvalue = Convert.ToDouble(Form1.self.inchy.Text);
             double finished = oldvalue + conv;
             Form1.self.inchy.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
+
+            Form1.self.buttonEnabled.Text = "0";
         }
         private void ZReceived()
         {
@@ -84,11 +99,9 @@ namespace Rummage_CNC
             double conv = (toNum * puls) * stepconverstion;
             double oldvalue = Convert.ToDouble(Form1.self.inchz.Text);
             double finished = oldvalue + conv;
-            Form1.self.inchz.Text = Convert.ToString(String.Format("{0:0.0000}", finished));            
-        }
-        private void ZeroZ()
-        {
-            Form1.self.inchz.Text = "0.0000";
+            Form1.self.inchz.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
+
+            Form1.self.buttonEnabled.Text = "0";
         }
         private void AReceived()
         {
@@ -100,7 +113,26 @@ namespace Rummage_CNC
             double oldvalue = Convert.ToDouble(Form1.self.incha.Text);
             double finished = oldvalue + conv;
             Form1.self.incha.Text = Convert.ToString(String.Format("{0:0.0000}", finished));
+
+            Form1.self.buttonEnabled.Text = "0";
         }
+        private void ZeroX()
+        {
+            Form1.self.inchx.Text = "0.0000";
+        }
+        private void ZeroY()
+        {
+            Form1.self.inchy.Text = "0.0000";
+        }
+        private void ZeroZ()
+        {
+            Form1.self.inchz.Text = "0.0000";
+        }
+        private void ZeroA()
+        {
+            Form1.self.incha.Text = "0.0000";
+        }
+
         private void THDReceived()
         {
             double toNum = Convert.ToDouble(lines[1]);
@@ -111,17 +143,23 @@ namespace Rummage_CNC
             if (Form1.self.threadcount == 1)
             {
                 Form1.self.GoThread.ForeColor = System.Drawing.Color.Lime;
-                Form1.self.GoThread.Text = "Waiting For TDC";
+                Form1.self.GoThread.Text = "TDC";
             }
             if (Form1.self.threadcount == 2)
             {
                 Form1.self.GoThread.ForeColor = System.Drawing.Color.Red;
-                Form1.self.GoThread.Text = "Waiting For TDC!";
+                Form1.self.GoThread.Text = "TDC";
                 Form1.self.threadcount = 0;
             }
 
         }
+        private void EStopped()
+        {
+            MessageBox.Show("E-Stop Pressed : Turn Reset", "Emergency Stop Pressed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     
 
+            return;
+        }
         public void serialreset(object sender, EventArgs e)//----------------------------reset serial port--------------------------------
         {
             Form1.self.serialPort1.Close();

@@ -20,6 +20,10 @@ namespace Rummage_CNC
             double degree = Convert.ToDouble(Form1.self.DegreeInc.Text);
             double degreeconst = Convert.ToDouble(Form1.self.DegreeInc.Text);
             double feed = Convert.ToDouble(Form1.self.DegreeIPM.Text);
+            double RapidReturn = Convert.ToDouble(Form1.self.RadiusIPMReturn.Text);
+            string axis1 = Form1.self.LongFeedAxisBT.Text;
+            string axis2 = Form1.self.ShortFeedAxisBT.Text;
+
 
             double backlashx = Convert.ToDouble(Form1.self.BacklashX.Text);
             double backlashy = Convert.ToDouble(Form1.self.BacklashY.Text);
@@ -79,11 +83,11 @@ namespace Rummage_CNC
                     if (Form1.self.checkBox5.Checked == false)
                     {
                         Form1.self.RGcodeRTB.Text += "{--- " + (0 + degree) + " Total Degrees -- " + warning + " --}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -x " + (string.Format("{0:0.0000}", checkmove) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis1 + " " + (string.Format("{0:0.0000}", checkmove) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{---------" + warning2 + "-------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -z " + (string.Format("{0:0.0000}", outX) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis2 + " " + (string.Format("{0:0.0000}", outX) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{----------------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +z " + (string.Format("{0:0.0000}", outX) + " R\n");
+                        Form1.self.RGcodeRTB.Text += RapidReturn + " +" + axis2 + " " + (string.Format("{0:0.0000}", outX) + " R\n");
                     }
                     yold = Ynew;
                     degree += degreeconst;
@@ -114,11 +118,11 @@ namespace Rummage_CNC
                     if (Form1.self.checkBox5.Checked == false)
                     {
                         Form1.self.RGcodeRTB.Text += "{--- " + (90 + degree) + " Total Degrees --" + warning + "--}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -x " + (string.Format("{0:0.0000}", -checkmove) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis1 + " " + string.Format("{0:0.0000}", -checkmove) + " R\n";
                         Form1.self.RGcodeRTB.Text += "{---------" + warning2 + "-------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +z " + (string.Format("{0:0.0000}", -X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +" + axis2 + " " + (string.Format("{0:0.0000}", -X) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{----------------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -z " + (string.Format("{0:0.0000}", -X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += RapidReturn + " -" + axis2 + " " + (string.Format("{0:0.0000}", -X) + " R\n");
 
                     }
                     yold = Y;
@@ -151,20 +155,17 @@ namespace Rummage_CNC
                     if (Form1.self.checkBox5.Checked == false)
                     {
                         Form1.self.RGcodeRTB.Text += "{--- " + (90 + degree) + " Total Degrees --" + warning + "--}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -z " + (string.Format("{0:0.0000}", checkmove) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis2 + " " + (string.Format("{0:0.0000}", checkmove) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{---------" + warning2 + "-------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -x " + (string.Format("{0:0.0000}", X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis1 + " " + (string.Format("{0:0.0000}", X) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{----------------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +x " + (string.Format("{0:0.0000}", X * 2) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +" + axis1 + " " + (string.Format("{0:0.0000}", X * 2) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{----------------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed * 5) + " -x " + (string.Format("{0:0.0000}", X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += RapidReturn + " -" + axis1 + " " + (string.Format("{0:0.0000}", X) + " R\n");
                     }
                     yold = Y;
                     degree += degreeconst;
                 }
-
-
-
 
             }
 
@@ -193,11 +194,11 @@ namespace Rummage_CNC
                     if (Form1.self.checkBox5.Checked == false)
                     {
                         Form1.self.RGcodeRTB.Text += "{--- " + (90 + degree) + " Total Degrees --" + warning + "--}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -x " + (string.Format("{0:0.0000}", checkmove) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis1 + " " + (string.Format("{0:0.0000}", checkmove) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{---------" + warning2 + "-------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -z " + (string.Format("{0:0.0000}", -X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " -" + axis2 + " " + (string.Format("{0:0.0000}", -X) + " R\n");
                         Form1.self.RGcodeRTB.Text += "{----------------}\r";
-                        Form1.self.RGcodeRTB.Text += string.Format("{0:00}", feed) + " +z " + (string.Format("{0:0.0000}", -X) + " R\n");
+                        Form1.self.RGcodeRTB.Text += RapidReturn + " +" + axis2 + " " + (string.Format("{0:0.0000}", -X) + " R\n");
                     }
                     yold = Y;
                     degree += degreeconst;

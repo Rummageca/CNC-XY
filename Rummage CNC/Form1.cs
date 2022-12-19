@@ -24,6 +24,9 @@ namespace Rummage_CNC
             Task.Delay(20);
             ConnectSerial_Click(sender, e);
             ConnectSerial.Enabled = false;
+            bootupOk();
+
+            
         }
 
         public bool isLooping = false;
@@ -31,7 +34,32 @@ namespace Rummage_CNC
         public bool EStopWasClicked = false;
         public int startthreadingnow = 0;
         public int threadcount = 0;
+        public int Dtime = 15;
 
+        private void bootupOk()
+        {
+            ButtonDisabled();
+            //MessageBox.Show("Serial connection stabalize", "Start up", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //run 1
+            Form1.self.serialPort1.Write("0\r");
+            Form1.self.serialPort1.Write("ccwx\r");
+            Form1.self.serialPort1.Write("0.0\r");
+            Task.Delay(200).Wait();
+            //run 2
+            Form1.self.serialPort1.Write("0\r");
+            Form1.self.serialPort1.Write("ccx\r");
+            Form1.self.serialPort1.Write("0.0\r");
+            Task.Delay(200).Wait();
+            //run 3
+            Form1.self.serialPort1.Write("0\r");
+            Form1.self.serialPort1.Write("ccwx\r");
+            Form1.self.serialPort1.Write("0.0\r");
+            Task.Delay(200).Wait();
+
+            MessageBox.Show("Serial connection stabalized", "Start up Done", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            ButtonEnabled();
+        }
         //----------------------------------------------Load settings-----------------------------------------
         private void loadsetting()
         {
@@ -257,8 +285,8 @@ namespace Rummage_CNC
         {
             Smartcontrol s1 = new Smartcontrol();
             s1.looporder(sender, e);
-        }       
-        
+        }
+
         //-------------- save settings--------------------------
         private void SaveSettings_Click(object sender, EventArgs e)
         {
@@ -268,8 +296,14 @@ namespace Rummage_CNC
         //--------------- Threading ----------------------------
         private void button25_Click(object sender, EventArgs e)
         {
-            ButtonDisabled();
-            startthreadingnow = 1;
+            //ButtonDisabled();          
+            Form1.self.ReloadcodeCB.Checked = false;
+
+            threading s1 = new threading();
+            s1.threadright(sender, e);
+
+            //Form1.self.startthreadingnow = 1;
+
         }
         private void button32_Click(object sender, EventArgs e)
         {
@@ -308,38 +342,53 @@ namespace Rummage_CNC
                 RGcodeRTB.SaveFile(SaveFile.FileName, RichTextBoxStreamType.PlainText);
             }
         }
-
+        public int currentcycl = 1;
+        public int Codeup = 0;
         public void running()
         {
-            Task.Factory.StartNew(() =>
+            Task.Run(() =>
             {
-                int count = 0;
+                Codeup = 1;
 
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     CodeRunning.Text = "Code Running";
-                    Task.Delay(100).Wait();
+                    Task.Delay(200).Wait();
                     CodeRunning.Text = "";
-                    Task.Delay(100).Wait();
-                    
-                    count = RGcodeRTB.Text.Length;
-                    if (count > 2)
+                    Task.Delay(200).Wait();
+
+                    if (RGcodeRTB.Text != "")
                     {
-                       i = 0;
-                    }                    
+                        i = 1;
+                    }
                 }
+
+
+                Codeup = 0;
             });
-
-        }   
-
-        public int currentcycl = 1;
+        }
         public void RunRGcode_Click(object sender, EventArgs e) //run rgcode
         {
-
             Task.Factory.StartNew(() =>
                 {
-                    running();
+                    Form1.self.ButtonDisabled();
 
+                    if (Codeup == 0)
+                    {
+                        running();
+                    }
+
+                    string[] lines = Form1.self.RGcodeRTB.Lines;
+                    string notclear = Form1.self.RGcodeRTB.Text;
+
+                    if (notclear.StartsWith("{") && notclear != "")
+                    {
+                        if (lines[1].Contains("Delay"))
+                        {
+                            Form1.self.startthreadingnow = 1;
+                        }
+                    }
+                    //--- first check-----
                     int cycl = Convert.ToInt32(CycleCount.Text);
                     CurrentCycle.Text = Convert.ToString(currentcycl);
 
@@ -347,12 +396,12 @@ namespace Rummage_CNC
                     {
                         Form1.self.RepeatBox.Text = Form1.self.RGcodeRTB.Text;
                     }
+                    //--- run code second check----
 
-                    Form1.self.ButtonDisabled();
                     RGcode s1 = new RGcode();
-                    s1.Readcode();
-                    Form1.self.ButtonEnabled();
+                    s1.Readcode(sender, e);
 
+                    //--- third check for repeat----                    
                     if (Form1.self.ReloadcodeCB.Checked == true && currentcycl <= cycl - 1)
                     {
                         currentcycl++;
@@ -363,12 +412,10 @@ namespace Rummage_CNC
                     {
                         currentcycl = 1;
                     }
+                    Form1.self.ButtonEnabled();
+                    //Form1.self.startthreadingnow = 0;
+
                 });
-        }
-        private void ExportCode_Click(object sender, EventArgs e)//export RGcode
-        {
-            RGcode s1 = new RGcode();
-            s1.ExportGcode();
         }
 
         //-------------- Convert inches to metric --------------
@@ -400,35 +447,38 @@ namespace Rummage_CNC
 
 
         //----------------- Clear E STop -----------------------
-        private void ClearEstop_Click(object sender, EventArgs e)
+        public void ClearEstop_Click(object sender, EventArgs e)
         {
-            if (ReloadcodeCB.Checked == false)
-            {
-                RGcodeRTB.Text = "";
+            //if (ReloadcodeCB.Checked == false)
+            //{
+            Form1.self.startthreadingnow = 0;
 
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("ccwy\r");
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("RGE-Stop\r");
+            int getNum = Convert.ToInt32(CurrentCycle.Text);
 
-                Form1.self.buttonEnabled.Text = "0";
-                ButtonEnabled();
-            }
+            RepeatBox.Text = "";
+            RGcodeRTB.Text = "";
 
-            if (ReloadcodeCB.Checked == true)
-            {
-                ReloadcodeCB.Checked = false;
-                RGcodeRTB.Text = "";
+            int getCycles = Convert.ToInt32(CycleCount.Text);
 
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("ccwy\r");
-                Form1.self.serialPort1.Write("0\r");
-                Form1.self.serialPort1.Write("RGE-Stop\r");
-
-                Form1.self.buttonEnabled.Text = "0";
-                ButtonEnabled();                
-            }
+            CycleCount.Text = "0";
             
+            if (Form1.self.serialPort1.IsOpen == true)
+            {
+                Form1.self.serialPort1.Write(string.Format("{0}\r", 1));
+                Form1.self.serialPort1.Write("ccwx" + "\r");
+                Form1.self.serialPort1.Write(Convert.ToString(string.Format("{0:0}\r", 0)));
+                Form1.self.serialPort1.Write("E-Stop" + "\r");
+            }
+
+            Form1.self.buttonEnabled.Text = "0";
+
+            Task.Delay(100).Wait();
+
+            CycleCount.Text = Convert.ToString(getCycles);
+            CurrentCycle.Text = Convert.ToString(getNum);
+
+            ButtonEnabled();
+          
         }
         //------------------ Tapers ----------------------------
         private void CycleTaper_Click(object sender, EventArgs e) // cycle taper
@@ -442,6 +492,10 @@ namespace Rummage_CNC
             string taperAxis = Convert.ToString((sender as Button).Text);
 
             if (taperAxis == "X Axis")
+            {
+                (sender as Button).Text = "Y Axis";
+            }
+            if (taperAxis == "Y Axis")
             {
                 (sender as Button).Text = "Z Axis";
             }
@@ -484,11 +538,11 @@ namespace Rummage_CNC
         {
             await Task.Run(() =>
             {
-               Task.Delay(10).Wait();
-               Form1.self.serialPort1.Write("0\r");
-               Form1.self.serialPort1.Write("ccwy\r");
-               Form1.self.serialPort1.Write("0\r");
-               Form1.self.serialPort1.Write("Manual Off\r");                
+                Task.Delay(10).Wait();
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("ccwy\r");
+                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("Manual Off\r");
             });
         }
         //--------------- Cycle Radius  --------------------------
@@ -534,25 +588,25 @@ namespace Rummage_CNC
             CalcRadius.Text = string.Format("{0:0.00}", passes / 2);
         }
         //--------------- Peck Drill ------------------------------
-        private void DrillAxis_Click(object sender, EventArgs e)
+        private void Axis_Click(object sender, EventArgs e)
         {
-            string Drillax = DrillAxis.Text;
+            string Drillax = Convert.ToString((sender as Button).Text);
 
-            if (Drillax == "x")
+            if (Drillax == "X")
             {
-                DrillAxis.Text = "y";
+                (sender as Button).Text = "Y";
             }
-            if (Drillax == "y")
+            if (Drillax == "Y")
             {
-                DrillAxis.Text = "z";
+                (sender as Button).Text = "Z";
             }
-            if (Drillax == "z")
+            if (Drillax == "Z")
             {
-                DrillAxis.Text = "a";
+                (sender as Button).Text = "A";
             }
-            if (Drillax == "a")
+            if (Drillax == "A")
             {
-                DrillAxis.Text = "x";
+                (sender as Button).Text = "X";
             }
         }
         private void Drill_Click(object sender, EventArgs e)
@@ -575,7 +629,7 @@ namespace Rummage_CNC
                 Form1.self.RGcodeRTB.Text += string.Format("{0}", feed) + " -" + DrillAx + " " + (string.Format("{0:0.0000}", peckdepth * 2) + "\n");
                 Form1.self.RGcodeRTB.Text += "{-----rapid out-----}\r";
                 Form1.self.RGcodeRTB.Text += string.Format("{0:00}", RapidDrill) + " +" + DrillAx + " " + (string.Format("{0:0.0000}", nextDrill) + "\n");
-                Form1.self.RGcodeRTB.Text += "{--------rapid in---------}\r";
+                Form1.self.RGcodeRTB.Text += "{------rapid in-----}\r";
                 Form1.self.RGcodeRTB.Text += string.Format("{0:00}", RapidDrill) + " -" + DrillAx + " " + (string.Format("{0:0.0000}", (nextDrill - peckdepth)) + "\n");
 
                 nextDrill += peckdepth;
@@ -613,7 +667,7 @@ namespace Rummage_CNC
             homeX.Enabled = true;
             homeY.Enabled = true;
             homeZ.Enabled = true;
-            homeA.Enabled = true;  
+            homeA.Enabled = true;
             //----
             LimitX.Enabled = true;
             LimitY.Enabled = true;
@@ -631,7 +685,7 @@ namespace Rummage_CNC
             Cycle4.Enabled = false;
             //----
             XnegMove.Enabled = false;
-            XposMove.Enabled = false;   
+            XposMove.Enabled = false;
             YnegMove.Enabled = false;
             YposMove.Enabled = false;
             ZnegMove.Enabled = false;
@@ -648,10 +702,10 @@ namespace Rummage_CNC
             manualAn.Enabled = false;
             manualAp.Enabled = false;
             //----
-            homeX.Enabled=false;
-            homeY.Enabled=false;
-            homeZ.Enabled=false;
-            homeA.Enabled=false;
+            homeX.Enabled = false;
+            homeY.Enabled = false;
+            homeZ.Enabled = false;
+            homeA.Enabled = false;
             //----
             LimitX.Enabled = false;
             LimitY.Enabled = false;
@@ -667,15 +721,14 @@ namespace Rummage_CNC
             serialsettings s1 = new serialsettings();
             s1.UpdateMessageBox(sender, e);
         }
-
-        private void GoThread_TextChanged(object sender, EventArgs e)
+        public double nep = 0;
+        public void GoThread_TextChanged(object sender, EventArgs e)
         {
             Task.Run(() =>
             {
                 if (startthreadingnow == 1)
                 {
-                    threading s1 = new threading();
-                    s1.threadright(sender, e);
+                    Form1.self.RunRGcode_Click(sender, e);
                     startthreadingnow = 0;
                 }
             });
@@ -687,22 +740,58 @@ namespace Rummage_CNC
             Task.Factory.StartNew(() =>
             {
                 ButtonDisabled();
+                string rotate = "";
+
+                if (ToolDir.Text == "+")
+                {
+                    rotate = "cw";
+                }
+                if (ToolDir.Text == "-")
+                {
+                    rotate = "ccw";
+                }
+
+
+                string axis = "";
+
+                double convrt1 = 0;
+
+                if (ToolSetAxis1.Text == "X")
+                {
+                    convrt1 = Convert.ToDouble(Form1.self.XConversion.Text);
+                    axis = "x";
+                }
+                if (ToolSetAxis1.Text == "Y")
+                {
+                    convrt1 = Convert.ToDouble(Form1.self.YConversion.Text);
+                    axis = "y";
+                }
+                if (ToolSetAxis1.Text == "Z")
+                {
+                    convrt1 = Convert.ToDouble(Form1.self.ZConversion.Text);
+                    axis = "z";
+                }
+                if (ToolSetAxis1.Text == "A")
+                {
+                    convrt1 = Convert.ToDouble(Form1.self.AConversion.Text);
+                    axis = "a";
+                }
 
                 double thou = Convert.ToDouble(Form1.self.ReturnToStockDiam.Text);
-                double convrt1 = Convert.ToDouble(Form1.self.ZConversion.Text);
                 double convrt2 = thou / convrt1;
                 double convrt3 = Convert.ToDouble(Form1.self.StepMultiplyConvs.Text);//------- conversion factor   ---    
                 int convrt4 = Convert.ToInt32(convrt2 / convrt3);
+                               
 
                 if (IsRadius.Checked == true)
                 {
                     convrt4 = convrt4 / 2;
-                }
+                }        
 
                 if (Form1.self.serialPort1.IsOpen == true)
                 {
-                    Form1.self.serialPort1.Write("N/A\r");
-                    Form1.self.serialPort1.Write("N/A\r");
+                    Form1.self.serialPort1.Write("10\r");
+                    Form1.self.serialPort1.Write(rotate + axis + "\r");
                     Form1.self.serialPort1.Write(Convert.ToString(string.Format("{0:0}\r", convrt4)));
                     Form1.self.serialPort1.Write("ToolSet\r");
 
@@ -808,7 +897,7 @@ namespace Rummage_CNC
         {
             Task.Run(() =>
             {
-                Form1.self.serialPort1.Write("0\r");
+                Form1.self.serialPort1.Write("1\r");
                 Form1.self.serialPort1.Write("ccwy\r");
                 Form1.self.serialPort1.Write("0\r");
                 Form1.self.serialPort1.Write("E-Stop\r");
@@ -840,13 +929,149 @@ namespace Rummage_CNC
             }
 
             double MTPI = Convert.ToDouble(MetricTPI.Text);
-            double TP = Convert.ToDouble(TPI.Text);
 
             if (MTPI > 0)
             {
                 double conv = 25.4 / MTPI;
-                TPI.Text = (string.Format("{0:0.00}", conv));
+                TPI.Text = (string.Format("{0:0.000}", conv));
             }
+        }
+
+        private void TPI_TextChanged(object sender, EventArgs e)
+        {
+            if (TPI.Text == "")
+            {
+                TPI.Text = "0";
+            }
+
+            double TP = Convert.ToDouble(TPI.Text);
+
+            if (TP > 0)
+            {
+                double conv = (1 / TP) * 0.614;
+                ThreadDepth.Text = (string.Format("{0:0.0000}", conv));
+            }
+        }
+
+        private void ThreadDepth_TextChanged(object sender, EventArgs e)
+        {
+            double tpi = Convert.ToDouble(TPI.Text);
+            double ThrdDepth = Convert.ToDouble(ThreadDepth.Text);
+
+            if (tpi > 0 && tpi < 10)
+            {
+                double D1 = ThrdDepth * 0.14;
+                double D2 = ThrdDepth * 0.13;
+                double D3 = ThrdDepth * 0.12;
+                double D4 = ThrdDepth * 0.11;
+                double D5 = ThrdDepth * 0.10;
+                double D6 = ThrdDepth * 0.09;
+                double D7 = ThrdDepth * 0.08;
+                double D8 = ThrdDepth * 0.07;
+                double D9 = ThrdDepth * 0.06;
+                double D10 = ThrdDepth * 0.05;
+                double D11 = ThrdDepth * 0.04;
+                double D12 = ThrdDepth * 0.03;
+                double D13 = ThrdDepth * 0.00;
+
+                DOCRTB.Text = Convert.ToString(string.Format("{0:0.0000}", D1)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D2)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D3)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D4)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D5)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D6)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D7)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D8)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D9)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D10)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D11)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D12)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D13)) + "\r";
+
+            }
+
+            if (tpi > 9 && tpi < 30)
+            {
+                double D1 = ThrdDepth * 0.24;
+                double D2 = ThrdDepth * 0.20;
+                double D3 = ThrdDepth * 0.18;
+                double D4 = ThrdDepth * 0.16;
+                double D5 = ThrdDepth * 0.14;
+                double D6 = ThrdDepth * 0.08;
+                double D13 = ThrdDepth * 0.00;
+
+                DOCRTB.Text = Convert.ToString(string.Format("{0:0.0000}", D1)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D2)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D3)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D4)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D5)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D6)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D13)) + "\r";
+
+            }
+
+            if (tpi > 29 && tpi < 60)
+            {
+                double D1 = ThrdDepth * 0.45;
+                double D2 = ThrdDepth * 0.35;
+                double D3 = ThrdDepth * 0.20;
+                double D13 = ThrdDepth * 0.00;
+
+                DOCRTB.Text = Convert.ToString(string.Format("{0:0.0000}", D1)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D2)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D3)) +
+                       "\r" + Convert.ToString(string.Format("{0:0.0000}", D13)) + "\r";
+
+            }
+
+            if (tpi > 59)
+            {
+                double D1 = ThrdDepth;
+                double D13 = ThrdDepth * 0.00;
+                DOCRTB.Text = Convert.ToString(string.Format("{0:0.0000}", D1)) + "\r" + Convert.ToString(string.Format("{0:0.0000}", D13)) + "\r";
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            threading s1 = new threading();
+            s1.threadDirection(sender, e);
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            string rotation = "";
+            double manualIPM = Convert.ToDouble(Form1.self.manualIPM.Text);
+
+            //capture up arrow key
+            if (keyData == Keys.Up)
+            {  
+                return true;
+            }            
+            //capture down arrow key
+            if (keyData == Keys.Down)
+            {                
+                return true;
+            }
+            //capture left arrow key
+            if (keyData == Keys.Left)
+            {                
+                return true;
+            }
+            //capture right arrow key
+            if (keyData == Keys.Right)
+            {               
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+
+        }
+
+       
+        private void manualXn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToolDir_Click(object sender, EventArgs e)
+        {
+            string TDir = Convert.ToString((sender as Button).Text);
+
+            if (TDir == "+")
+            {
+                (sender as Button).Text = "-";
+            }
+            if (TDir == "-")
+            {
+                (sender as Button).Text = "+";
+            }
+            
         }
     }
 }
