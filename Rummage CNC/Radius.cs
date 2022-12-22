@@ -34,7 +34,7 @@ namespace Rummage_CNC
 
             //double X = radius * Math.Sin(fromradians);
 
-            double xold = 0;
+            //double xold = 0;
             double yold = 0;
 
 

@@ -8,9 +8,9 @@ namespace Rummage_CNC
     {
         double convrt1 = 0;
         double convrt1a = 0;
-        bool startagain = false;
-        int loopAmount = 1;
-        int loopAmountold = 0;
+       // bool startagain = false;
+       // int loopAmount = 1;
+       // int loopAmountold = 0;
         
 
         public void WaitForPulse(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Rummage_CNC
 
                 string rotate = "";
                 string rotate2 = "";
-                string axis = "";
+                //string axis = "";
 
                 string first = lines[1].Split(' ').Skip(0).FirstOrDefault(); // IPM
                 string sencond = lines[1].Split(' ').Skip(1).FirstOrDefault(); // Axis
@@ -284,9 +284,19 @@ namespace Rummage_CNC
                 }
 
             }
-            else if (notclear == "")
+            else if (notclear.StartsWith(""))
             {
-                Form1.self.RGcodeRTB.Text = "";
+                var Lines1 = Form1.self.RGcodeRTB.Lines.ToList();
+                
+                for (int i = Lines1.Count - 1; i >= 0; i--)
+                {
+                    if (Lines1[i].Trim() == string.Empty)
+                    {
+                        Lines1.RemoveAt(i);
+                    }
+                }
+                Form1.self.RGcodeRTB.Lines = Lines1.ToArray();
+
             }
 
         }

@@ -909,18 +909,22 @@ namespace Rummage_CNC
 
         private void MetricConv_TextChanged(object sender, EventArgs e)
         {
-            if (MetricConv.Text == "")
+            if (ConvValue.Text == "")
             {
-                MetricConv.Text = "0";
+                ConvValue.Text = "0";
             }
 
-            double MM = Convert.ToDouble(MetricConv.Text);
+            double MM = Convert.ToDouble(ConvValue.Text);
 
-            double newvalue = MM / 25.4;
+            double newvalue = MM * 25.4;
+
+            MetricConv.Text = string.Format("{0:0.0000}", newvalue);
+
+                    newvalue = MM / 25.4;
 
             InchConv.Text = string.Format("{0:0.0000}", newvalue);
         }
-
+       
         private void MetricTPI_TextChanged(object sender, EventArgs e)
         {
             if (MetricTPI.Text == "")
@@ -1026,7 +1030,7 @@ namespace Rummage_CNC
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            string rotation = "";
+            //string rotation = "";
             double manualIPM = Convert.ToDouble(Form1.self.manualIPM.Text);
 
             //capture up arrow key

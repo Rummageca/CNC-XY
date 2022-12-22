@@ -7,8 +7,8 @@ namespace Rummage_CNC
 {
     class Smartcontrol
     {
-        public int count;
-        public int loopcount;
+       // public int count;
+        //public int loopcount;
 
         public void looporder(object sender, MouseEventArgs e)
         {

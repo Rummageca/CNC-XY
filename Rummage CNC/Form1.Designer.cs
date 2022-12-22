@@ -286,6 +286,8 @@ namespace Rummage_CNC
             this.label2 = new System.Windows.Forms.Label();
             this.zeroY = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.ConvValue = new System.Windows.Forms.TextBox();
+            this.label80 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1202,6 +1204,8 @@ namespace Rummage_CNC
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+            this.tabPage1.Controls.Add(this.ConvValue);
+            this.tabPage1.Controls.Add(this.label80);
             this.tabPage1.Controls.Add(this.ToolDir);
             this.tabPage1.Controls.Add(this.label77);
             this.tabPage1.Controls.Add(this.ToolSetAxis1);
@@ -1621,6 +1625,7 @@ namespace Rummage_CNC
             this.ThreadDepth.Text = "0.0";
             this.ThreadDepth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ThreadDepth.TextChanged += new System.EventHandler(this.ThreadDepth_TextChanged);
+            this.ThreadDepth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label79
             // 
@@ -1644,6 +1649,7 @@ namespace Rummage_CNC
             this.ThreadDOC.TabIndex = 185;
             this.ThreadDOC.Text = "0.005";
             this.ThreadDOC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ThreadDOC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // ThreadRetractIPM
             // 
@@ -1682,6 +1688,7 @@ namespace Rummage_CNC
             this.ThreadRetractLength.TabIndex = 177;
             this.ThreadRetractLength.Text = "0.082";
             this.ThreadRetractLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ThreadRetractLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label73
             // 
@@ -1705,6 +1712,7 @@ namespace Rummage_CNC
             this.ThreadLength.TabIndex = 173;
             this.ThreadLength.Text = "1.000";
             this.ThreadLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ThreadLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label70
             // 
@@ -1828,7 +1836,7 @@ namespace Rummage_CNC
             // 
             this.InchConv.BackColor = System.Drawing.Color.White;
             this.InchConv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InchConv.Location = new System.Drawing.Point(1129, 348);
+            this.InchConv.Location = new System.Drawing.Point(1129, 445);
             this.InchConv.MaxLength = 10;
             this.InchConv.Name = "InchConv";
             this.InchConv.ReadOnly = true;
@@ -1836,13 +1844,14 @@ namespace Rummage_CNC
             this.InchConv.TabIndex = 0;
             this.InchConv.Text = "0.0";
             this.InchConv.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.InchConv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label66
             // 
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label66.ForeColor = System.Drawing.Color.Lime;
-            this.label66.Location = new System.Drawing.Point(1170, 328);
+            this.label66.Location = new System.Drawing.Point(1170, 425);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(34, 15);
             this.label66.TabIndex = 0;
@@ -1852,14 +1861,14 @@ namespace Rummage_CNC
             // 
             this.MetricConv.BackColor = System.Drawing.Color.White;
             this.MetricConv.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetricConv.Location = new System.Drawing.Point(1129, 293);
+            this.MetricConv.Location = new System.Drawing.Point(1129, 390);
             this.MetricConv.MaxLength = 10;
             this.MetricConv.Name = "MetricConv";
+            this.MetricConv.ReadOnly = true;
             this.MetricConv.Size = new System.Drawing.Size(114, 31);
             this.MetricConv.TabIndex = 88;
             this.MetricConv.Text = "0.0";
             this.MetricConv.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.MetricConv.TextChanged += new System.EventHandler(this.MetricConv_TextChanged);
             this.MetricConv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label56
@@ -1867,7 +1876,7 @@ namespace Rummage_CNC
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.ForeColor = System.Drawing.Color.Lime;
-            this.label56.Location = new System.Drawing.Point(1148, 273);
+            this.label56.Location = new System.Drawing.Point(1148, 370);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(75, 15);
             this.label56.TabIndex = 0;
@@ -2044,6 +2053,7 @@ namespace Rummage_CNC
             this.TPI.Text = "0";
             this.TPI.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TPI.TextChanged += new System.EventHandler(this.TPI_TextChanged);
+            this.TPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
             // 
             // label62
             // 
@@ -3905,6 +3915,31 @@ namespace Rummage_CNC
             this.tabControl1.Size = new System.Drawing.Size(1905, 1000);
             this.tabControl1.TabIndex = 0;
             // 
+            // ConvValue
+            // 
+            this.ConvValue.BackColor = System.Drawing.Color.White;
+            this.ConvValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConvValue.Location = new System.Drawing.Point(1129, 306);
+            this.ConvValue.MaxLength = 10;
+            this.ConvValue.Name = "ConvValue";
+            this.ConvValue.Size = new System.Drawing.Size(114, 31);
+            this.ConvValue.TabIndex = 231;
+            this.ConvValue.Text = "0.0";
+            this.ConvValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ConvValue.TextChanged += new System.EventHandler(this.MetricConv_TextChanged);
+            this.ConvValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numonly1_KeyPress);
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.ForeColor = System.Drawing.Color.Lime;
+            this.label80.Location = new System.Drawing.Point(1146, 286);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(81, 15);
+            this.label80.TabIndex = 230;
+            this.label80.Text = "Enter Value";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4184,6 +4219,8 @@ namespace Rummage_CNC
         private System.Windows.Forms.Label label64;
         public System.Windows.Forms.Button ToolDir;
         private System.Windows.Forms.Label label77;
+        public System.Windows.Forms.TextBox ConvValue;
+        private System.Windows.Forms.Label label80;
     }
 }
 
